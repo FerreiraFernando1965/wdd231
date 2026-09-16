@@ -3,14 +3,14 @@
    ========================================================================== */
 :root {
     /* Escolha das cores baseada na Bandeira da Cidade de Campinas */
-    --accent-color: #d4af37;       /* Amarelo Dourado (COR DE DESTAQUE PRINCIPAL) */
+    --accent-color: #f1ce5e;       /* Amarelo Dourado (COR DE DESTAQUE PRINCIPAL) */
     --accent-hover: #b59226;       /* Amarelo Dourado Escuro (Tom para Interatividade) */
     --accent-light: #fef9e7;       /* Amarelo Dourado Suave (Fundo de Seções) */
-    --primary-color: #002244;      /* Azul Marinho Profundo */
+    --primary-color: #052b51;      /* Azul Marinho Profundo */
     --bg-white: #ffffff;           /* Branco Puro */
 
     /* Derivações Mantendo a Paleta Restrita */
-    --dark-neutral: #0a192f;       /* Azul Marinho Ultra Escuro (Texto) */
+    --dark-neutral: #102e5b;       /* Azul Marinho Ultra Escuro (Texto) */
     --light-neutral: #fafaf6;      /* Fundo Claro Levemente Quente */
     --card-bg: #ffffff;            /* Fundo dos Cards */
     --border-color: #d4af37;       /* Borda com Toque Dourado */
@@ -34,7 +34,7 @@ img {
 body {
     font-family: var(--font-main);
     color: var(--dark-neutral);
-    background-color: var(--light-neutral);
+    background-color: var(--primary-color);
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -71,7 +71,7 @@ header {
 }
 
 .brand img.logo {
-    height: 40px;
+    height: 50px;
     width: auto;
 }
 
@@ -133,7 +133,7 @@ header {
    ========================================================================== */
 .hero {
     /* Hero Predominantemente Amarelo Dourado */
-    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    background:  var(--accent-color);
     color: var(--primary-color);
     padding: 2.5rem 1.5rem;
     border-radius: 8px;
@@ -202,7 +202,7 @@ header {
 /* Chamada para Ação com Fundo Amarelo Suave e Borda Marcante */
 .join-cta {
     background-color: var(--accent-light);
-    border: 2px solid var(--accent-color);
+    border: 4px solid var(--accent-color);
     border-radius: 8px;
     padding: 1.5rem;
     text-align: center;
@@ -213,30 +213,29 @@ header {
    Rodapé
    ========================================================================== */
 footer {
-    background-color: var(--primary-color);
-    color: var(--bg-white);
-    padding: 1.5rem 1rem;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 1.0rem 1rem;
     text-align: center;
     margin-top: auto;
-    border-top: 4px solid var(--accent-color); /* Linha Dourada de Fechamento */
+    border-top: 4px solid var(--primary-color); /* Linha Dourada de Fechamento */
 }
 
 .footer-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.2rem;
 }
 
 .social-links {
     display: flex;
-    gap: 1rem;
+    gap: 3rem;
 }
 
 .social-links img {
-    width: 24px;
-    height: 24px;
-    filter: invert(72%) sepia(85%) saturate(362%) hue-rotate(358deg) brightness(91%) contrast(89%); /* Icones Sociais em Tom Dourado */
+    width: 50px;
+    height: auto;
 }
 
 /* ==========================================================================
