@@ -1,0 +1,74 @@
+HTML
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial do Site da Câmara de Comércio de Campinas</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="scripts/rodape.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="brand">
+            <!-- Logotipo em SVG -->
+            <img src="imagens/logocccsf.jpg" alt="Logotipo do site" class="logo">
+            <!-- Nome do site renderizado com <span> -->
+            <span>Fernando Luis Ferreira / Câmara de Comércio de Campinas</span>
+        </div>
+
+        <!-- Ícone de hambúrguer para telas pequenas -->
+        <button id="hamburger-menu" aria-label="Abrir menu de navegação">
+            &#9776;
+        </button>
+
+        <!-- Menu de navegação responsivo -->
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html" class="active">Página Inicial</a></li>
+                <li><a href="camara/index.html">Projeto da Câmara</a></li>
+                <li><a href="projeto-final/index.html">Projeto Final</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Página Inicial</h1>
+
+        <section>
+            <h2>Seção 1</h2>
+            <p>Conteúdo da primeira seção do site...</p>
+        </section>
+
+        <section>
+            <h2>Seção 2</h2>
+            <p>Conteúdo da segunda seção do site...</p>
+        </section>
+
+        <section>
+            <h2>Seção 3</h2>
+            <p>Conteúdo da terceira seção do site...</p>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Item 1: Links de Mídia Social com ícones/SVG -->
+        <div class="social-links">
+            <a href="https://github.com/seu-usuario" target="_blank" aria-label="GitHub">
+                <img src="icons/github.svg" alt="GitHub">
+            </a>
+            <a href="https://linkedin.com/in/seu-perfil" target="_blank" aria-label="LinkedIn">
+                <img src="icons/linkedin.svg" alt="LinkedIn">
+            </a>
+            
+        </div>
+
+        <!-- Item 2: Direitos autorais e dados pessoais -->
+        
+        <p>&copy; <span id="anoatual"></span> 🚀 Fernando Luis Ferreira — SP - Brasil 🚀 </p>
+        <p id="ultimaModificacao"></p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câmara de Comércio de Campinas</title>
+    <link rel="stylesheet" href="diretorio.css">
+    <script src="diretorio.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="brand">
+            <span>Câmara de Comércio de Campinas</span>
+        </div>
+        <button id="hamburger-menu" aria-label="Abrir Menu">☰</button>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#" class="active">Início</a></li>
+                <li><a href="camara.html">Página inicial</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Associe-se</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Empresas Associadas</h1>
+            <p>Conheça as empresas associadas da Câmara de Comércio de Campinas.</p>
+        </section>
+
+        <!-- Filtros de Categoria -->
+        <div class="filtros-container">
+            <button class="btn-filtro active" data-categoria="todos">Todos</button>
+            <button class="btn-filtro" data-categoria="Alimentos">Alimentos</button>
+            <button class="btn-filtro" data-categoria="Educação">Educação</button>
+            <button class="btn-filtro" data-categoria="Saneamento básico">Saneamento</button>
+            <button class="btn-filtro" data-categoria="Materiais de construção">Construção</button>
+        </div>
+
+        <!-- Grid para renderização dos cards dinâmicos -->
+        <section id="grid-cardapio-dinamico"></section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="anoatual"></span> Guia Campinas. Todos os direitos reservados.</p>
+            <p id="ultimaModificacao"></p>
+        </div>
+    </footer>
+
+    
+</body>
+</html>
