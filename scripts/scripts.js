@@ -1,21 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Menu Hambúrguer (Mobile)
+    // 1. Menu Hambúrguer (Mobile) - Prioridade alta de interação
     const hamburgerBtn = document.getElementById("hamburger-menu");
     const navMenu = document.getElementById("nav-menu");
 
     if (hamburgerBtn && navMenu) {
         hamburgerBtn.addEventListener("click", () => {
             const isExpanded = hamburgerBtn.getAttribute("aria-expanded") === "true";
-            
-            // Alterna a classe 'open' para estilização CSS
             navMenu.classList.toggle("open");
-            
-            // Atualiza acessibilidade
             hamburgerBtn.setAttribute("aria-expanded", !isExpanded);
         });
     }
 
-    // 2. Atualização do ano e modificação no rodapé
+    // 2. Executar tarefas não críticas após a thread principal ficar ociosa
+    if ("requestIdleCallback" in window) {
+        requestIdleCallback(initNonCriticalFeatures);
+    } else {
+        setTimeout(initNonCriticalFeatures, 200);
+    }
+});
+
+function initNonCriticalFeatures() {
+    // Atualização do ano e modificação no rodapé
     const anoAtualEl = document.querySelector("#anoatual");
     if (anoAtualEl) {
         anoAtualEl.textContent = new Date().getFullYear();
@@ -24,42 +29,39 @@ document.addEventListener("DOMContentLoaded", () => {
     const ultimaModificacaoEl = document.querySelector("#ultimaModificacao");
     if (ultimaModificacaoEl) {
         const dataModificacao = new Date(document.lastModified);
-        const dataFormatada = dataModificacao.toLocaleDateString("pt-BR");
-        ultimaModificacaoEl.textContent = `Última modificação: ${dataFormatada}`;
+        ultimaModificacaoEl.textContent = `Última modificação: ${dataModificacao.toLocaleDateString("pt-BR")}`;
     }
 
-    // 3. Previsão do Tempo para Campinas (API Open-Meteo)
+    // Previsão do Tempo
+    carregarClima();
+}
+
+async function carregarClima() {
     const weatherContainer = document.getElementById("weather-info");
-    
-    if (weatherContainer) {
-        const urlClima = "https://api.open-meteo.com/v1/forecast?latitude=-22.9056&longitude=-47.0608&current=temperature_2m,relative_humidity_2m,weather_code&timezone=America%2FSao_Paulo";
+    if (!weatherContainer) return;
 
-        fetch(urlClima)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Falha na resposta da API");
-                }
-                return response.json();
-            })
-            .then(data => {
-                const temp = Math.round(data.current.temperature_2m);
-                const umidade = data.current.relative_humidity_2m;
-                const codigoClima = data.current.weather_code;
-                const descricaoClima = traduzirCodigoTempo(codigoClima);
+    // URL otimizada com apenas os campos estritamente necessários
+    const urlClima = "https://api.open-meteo.com/v1/forecast?latitude=-22.9056&longitude=-47.0608&current=temperature_2m,relative_humidity_2m,weather_code&timezone=America%2FSao_Paulo";
 
-                weatherContainer.innerHTML = `
-                    <p class="weather-temp"><strong>${temp}°C</strong> — ${descricaoClima}</p>
-                    <p class="weather-extra">Umidade do ar: ${umidade}%</p>
-                `;
-            })
-            .catch(error => {
-                console.error("Erro ao carregar dados do tempo:", error);
-                weatherContainer.innerHTML = `<p>Não foi possível carregar a previsão do tempo no momento.</p>`;
-            });
+    try {
+        const response = await fetch(urlClima);
+        if (!response.ok) throw new Error("Falha na resposta da API");
+
+        const data = await response.json();
+        const temp = Math.round(data.current.temperature_2m);
+        const umidade = data.current.relative_humidity_2m;
+        const descricaoClima = traduzirCodigoTempo(data.current.weather_code);
+
+        weatherContainer.innerHTML = `
+            <p class="weather-temp"><strong>${temp}°C</strong> — ${descricaoClima}</p>
+            <p class="weather-extra">Umidade do ar: ${umidade}%</p>
+        `;
+    } catch (error) {
+        console.error("Erro ao carregar dados do tempo:", error);
+        weatherContainer.innerHTML = `<p>Não foi possível carregar a previsão do tempo no momento.</p>`;
     }
-}); // Fechamento correto do DOMContentLoaded
+}
 
-// Função auxiliar mantida no escopo global
 function traduzirCodigoTempo(code) {
     const codigos = {
         0: "Céu limpo ☀️",

@@ -2,16 +2,14 @@
    Variáveis Globais & Reset Responsivo
    ========================================================================== */
 :root {
-    /* Escolha das cores baseada na Bandeira da Cidade de Campinas */
-    --accent-color: #f1ce5e;       /* Amarelo Dourado (COR DE DESTAQUE PRINCIPAL) */
-    --accent-hover: #b59226;       /* Amarelo Dourado Escuro (Tom para Interatividade) */
-    --accent-light: #fef9e7;       /* Amarelo Dourado Suave (Fundo de Seções) */
+    --accent-color: #f1ce5e;       /* Amarelo Dourado */
+    --accent-hover: #b59226;       /* Amarelo Dourado Escuro */
+    --accent-light: #fef9e7;       /* Amarelo Dourado Suave */
     --primary-color: #052b51;      /* Azul Marinho Profundo */
     --bg-white: #ffffff;           /* Branco Puro */
 
-    /* Derivações Mantendo a Paleta Restrita */
-    --dark-neutral: #102e5b;       /* Azul Marinho Ultra Escuro (Texto) */
-    --light-neutral: #fafaf6;      /* Fundo Claro Levemente Quente */
+    --dark-neutral: #102e5b;       /* Azul Marinho Ultra Escuro */
+    --light-neutral: #fafaf6;      /* Fundo Claro */
     --card-bg: #ffffff;            /* Fundo dos Cards */
     --border-color: #d4af37;       /* Borda com Toque Dourado */
     --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -24,7 +22,6 @@
     padding: 0;
 }
 
-/* Imagens responsivas para não estourarem a tela */
 img {
     max-width: 100%;
     height: auto;
@@ -50,7 +47,7 @@ main {
 }
 
 /* ==========================================================================
-   Cabeçalho e Menu Hambúrguer (Mobile First)
+   Cabeçalho e Menu
    ========================================================================== */
 header {
     background-color: var(--accent-color);
@@ -61,7 +58,7 @@ header {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    border-bottom: 4px solid var(--primary-color); /* Linha Azul de Destaque */
+    border-bottom: 4px solid var(--primary-color);
 }
 
 .brand {
@@ -73,33 +70,31 @@ header {
 .brand img.logo {
     height: 50px;
     width: auto;
+    aspect-ratio: 1 / 1;
 }
 
 .brand span {
     font-size: 1rem;
     font-weight: 900;
-    color: var(--primary-color); /* Marca em Azul */
+    color: var(--primary-color);
 }
 
-/* Botão Hambúrguer Visível por Padrão no Mobile */
 #hamburger-menu {
     display: block;
     background: none;
     border: none;
-    color: var(--primary-color); /* Ícone Hambúrguer Dourado */
+    color: var(--primary-color);
     font-size: 2rem;
     cursor: pointer;
     line-height: 1;
 }
 
-/* Menu de Navegação Escondido por Padrão no Mobile */
 #nav-menu {
     display: none;
     width: 100%;
     background-color: var(--primary-color);
 }
 
-/* Classe ativada via JS para abrir o menu no mobile */
 #nav-menu.open {
     display: block;
     margin-top: 1rem;
@@ -129,11 +124,10 @@ header {
 }
 
 /* ==========================================================================
-   Hero & Seções do Main (Prevalência do Amarelo Dourado)
+   Hero & Seções (Otimização de Renderização)
    ========================================================================== */
 .hero {
-    /* Hero Predominantemente Amarelo Dourado */
-    background:  var(--accent-color);
+    background: var(--accent-color);
     color: var(--primary-color);
     padding: 2.5rem 1.5rem;
     border-radius: 8px;
@@ -148,7 +142,6 @@ header {
     font-weight: 800;
 }
 
-/* Botão de Contraste dentro do Hero Amarelo */
 .cta-button {
     display: inline-block;
     background-color: var(--primary-color);
@@ -163,7 +156,7 @@ header {
 }
 
 .cta-button:hover {
-    background-color: var(--bg-white);
+    background-color: var(--accent-hover);
     color: var(--primary-color);
     border-color: var(--bg-white);
 }
@@ -189,7 +182,7 @@ header {
     margin-top: 1rem;
 }
 
-/* Cards com Prevalência Dourada */
+/* Otimização de renderização da Main Thread usando content-visibility */
 .spotlight-card {
     background-color: var(--card-bg);
     border: 2px solid var(--accent-color);
@@ -197,9 +190,10 @@ header {
     padding: 1.25rem;
     border-top: 6px solid var(--accent-color);
     box-shadow: 0 2px 8px rgba(212, 175, 55, 0.15);
+    content-visibility: auto;
+    contain-intrinsic-size: 200px;
 }
 
-/* Chamada para Ação com Fundo Amarelo Suave e Borda Marcante */
 .join-cta {
     background-color: var(--accent-light);
     border: 4px solid var(--accent-color);
@@ -218,7 +212,7 @@ footer {
     padding: 1.0rem 1rem;
     text-align: center;
     margin-top: auto;
-    border-top: 4px solid var(--primary-color); /* Linha Dourada de Fechamento */
+    border-top: 4px solid var(--primary-color);
 }
 
 .footer-content {
@@ -235,23 +229,30 @@ footer {
 
 .social-links img {
     width: 50px;
-    height: auto;
+    height: 50px;
+    aspect-ratio: 1 / 1;
+}
+
+/* Redução de animação/transição caso o usuário prefira economizar recursos */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
 /* ==========================================================================
-   Media Query para Telas Maiores (Desktops / Tablets >= 768px)
+   Media Queries
    ========================================================================== */
 @media screen and (min-width: 768px) {
     header {
         flex-wrap: nowrap;
     }
 
-    /* Oculta o botão hambúrguer no desktop */
     #hamburger-menu {
         display: none !important;
     }
 
-    /* Força o menu a ficar visível e em linha na barra superior */
     #nav-menu {
         display: block !important;
         width: auto;
@@ -276,7 +277,6 @@ footer {
         font-size: 2.4rem;
     }
 
-    /* Transforma os elementos do Main em Grades (Grid) no Desktop */
     .dashboard-grid {
         display: grid;
         grid-template-columns: 2fr 1fr;
