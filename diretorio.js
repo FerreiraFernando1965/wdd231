@@ -4,67 +4,67 @@ const empresas = [
         nome: "Assaí Atacadista",
         categoria: "Alimentos",
         descricao: "Supermercado atacadista com ampla variedade de produtos.",
-        imagem: "assai.webp"
+        imagem: "imagens/assai.webp"
     },
     {
         nome: "KFC",
         categoria: "Alimentos",
         descricao: "Restaurante de frango frito com diversos acompanhamentos.",
-        imagem: "kfc.webp"
+        imagem: "imagens/kfc.webp"
     },
     {
         nome: "Sanasa",
         categoria: "Saneamento básico",
         descricao: "Empresa especializada em soluções de saneamento.",
-        imagem: "sanasa.webp"
+        imagem: "imagens/sanasa.webp"
     },
     {
         nome: "Leroy Merlin",
         categoria: "Materiais de construção",
         descricao: "Loja de materiais de construção com ampla variedade de produtos.",
-        imagem: "leroymerlin.webp"
+        imagem: "imagens/leroymerlin.webp"
     },
     {
         nome: "Unicamp",
         categoria: "Educação",
         descricao: "Universidade pública com cursos de graduação e pós-graduação.",
-        imagem: "unicamp.webp"
+        imagem: "imagens/unicamp.webp"
     },
     {
         nome: "UNIP",
         categoria: "Educação",
         descricao: "Universidade privada com cursos de graduação e pós-graduação.",
-        imagem: "unip.webp"
+        imagem: "imagens/unip.webp"
     },
     {
         nome: "Burger King",
         categoria: "Alimentos",
         descricao: "Restaurante de hambúrgueres com diversos acompanhamentos.",
-        imagem: "burgerking.webp"
+        imagem: "imagens/burgerking.webp"
     },
     {
         nome: "DoMendes",
         categoria: "Alimentos",
         descricao: "Pizzaria especializada em pizzas artesanais.",
-        imagem: "domendes.webp"
+        imagem: "imagens/domendes.webp"
     },
     {
         nome: "Coco Bambu",
         categoria: "Alimentos",
         descricao: "Restaurante especializado em pratos tropicais e bebidas exóticas.",
-        imagem: "cocobambu.webp"
+        imagem: "imagens/cocobambu.webp"
     },
     {
         nome: "Sorvetes Sergel",
         categoria: "Alimentos",
         descricao: "Sorveteria especializada em sabores exclusivos.",
-        imagem: "sergel.webp"
+        imagem: "imagens/sergel.webp"
     },
     {
         nome: "O Matuto",
         categoria: "Alimentos",
         descricao: "Restaurante especializado em pratos quentes, churrasco e bebidas exóticas.",
-        imagem: "omatuto.webp"
+        imagem: "imagens/omatuto.webp"
     }
 ];
 

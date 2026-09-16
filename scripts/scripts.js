@@ -19,22 +19,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-function initNonCriticalFeatures() {
-    // Atualização do ano e modificação no rodapé
-    const anoAtualEl = document.querySelector("#anoatual");
-    if (anoAtualEl) {
-        anoAtualEl.textContent = new Date().getFullYear();
-    }
+// Inicialização de datas no rodapé
+const elAno = document.querySelector("#anoatual");
+if (elAno) elAno.textContent = new Date().getFullYear();
 
-    const ultimaModificacaoEl = document.querySelector("#ultimaModificacao");
-    if (ultimaModificacaoEl) {
-        const dataModificacao = new Date(document.lastModified);
-        ultimaModificacaoEl.textContent = `Última modificação: ${dataModificacao.toLocaleDateString("pt-BR")}`;
+const elModificacao = document.querySelector("#ultimaModificacao");
+if (elModificacao) {
+    const dataModificacao = new Date(document.lastModified);
+    elModificacao.textContent = `Última atualização: ${dataModificacao.toLocaleDateString("pt-BR")}`;
     }
 
     // Previsão do Tempo
     carregarClima();
-}
+
 
 async function carregarClima() {
     const weatherContainer = document.getElementById("weather-info");

@@ -187,9 +187,10 @@ header {
 
 .card-empresa img {
     width: 100px;
-    height: 100px;
+    height: 150px;
     object-fit: contain;
-    margin-bottom: 1rem;
+   display: block;
+   margin: 0 auto 10px auto;
     border-radius: 4px;
 }
 
