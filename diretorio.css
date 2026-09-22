@@ -121,25 +121,60 @@ header {
 }
 
 /* ==========================================================================
-   Hero e Seção de Filtros
+   Hero com Imagem Fundo Transparente (Sem Gradiente)
    ========================================================================== */
 .hero {
-    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
-    color: var(--primary-color);
-    padding: 2.5rem 1.5rem;
+    position: relative;
+    min-height: 380px;
+    background-color: var(--primary-color);
     border-radius: 8px;
-    text-align: center;
     margin-bottom: 1.5rem;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end; /* Alinha o conteúdo no fundo do hero */
+}
+
+/* Imagem principal completamente nítida */
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Conteúdo sobreposto na parte inferior com fundo gradiente para legibilidade */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    text-align: center;
+    color: #ffffff;
+    /* Gradiente suave apenas na base do container para legibilidade sem afetar a nitidez da imagem */
+    background: linear-gradient(to top, rgba(5, 43, 81, 0.92) 0%, rgba(5, 43, 81, 0.6) 70%, rgba(5, 43, 81, 0) 100%);
 }
 
 .hero h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin-bottom: 0.5rem;
     font-weight: 800;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-/* Botões de Filtro */
+.hero p {
+    color: #f1ce5e; /* Amarelo dourado para destaque do parágrafo */
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+/* ==========================================================================
+   Seção de Filtros
+   ========================================================================== */
 .filtros-container {
     display: flex;
     flex-wrap: wrap;
@@ -189,8 +224,8 @@ header {
     width: 100px;
     height: 150px;
     object-fit: contain;
-   display: block;
-   margin: 0 auto 10px auto;
+    display: block;
+    margin: 0 auto 10px auto;
     border-radius: 4px;
 }
 
