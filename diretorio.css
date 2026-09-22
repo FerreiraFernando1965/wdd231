@@ -1,180 +1,9 @@
-:root {
-    /* Escolha das cores baseada na Bandeira da Cidade de Campinas */
-    --accent-color: #d4af37;       /* Amarelo Dourado (COR DE DESTAQUE PRINCIPAL) */
-    --accent-hover: #b59226;       /* Amarelo Dourado Escuro (Tom para Interatividade) */
-    --accent-light: #fef9e7;       /* Amarelo Dourado Suave (Fundo de Seções) */
-    --primary-color: #002244;      /* Azul Marinho Profundo */
-    --bg-white: #ffffff;           /* Branco Puro */
-
-    /* Derivações Mantendo a Paleta Restrita */
-    --dark-neutral: #0a192f;       /* Azul Marinho Ultra Escuro (Texto) */
-    --light-neutral: #fafaf6;      /* Fundo Claro Levemente Quente */
-    --card-bg: #ffffff;            /* Fundo dos Cards */
-    --border-color: #d4af37;       /* Borda com Toque Dourado */
-    --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --transition-speed: 0.3s ease;
-}
-
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-/* Imagens responsivas para não estourarem a tela */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-body {
-    font-family: var(--font-main);
-    color: var(--dark-neutral);
-    background-color: var(--light-neutral);
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex: 1;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
 /* ==========================================================================
-   Cabeçalho e Menu Hambúrguer (Mobile First)
+   ESTILOS ESPECÍFICOS DA PÁGINA DE DIRETÓRIO (DIRETORIO.HTML)
+   (Herda variáveis e regras base do estilos.css principal)
    ========================================================================== */
-header {
-    background-color: var(--accent-color);
-    color: var(--bg-white);
-    padding: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    border-bottom: 4px solid var(--primary-color);
-}
 
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.brand span {
-    font-size: 1.2rem;
-    font-weight: 900;
-    color: var(--primary-color);
-}
-
-/* Botão Hambúrguer Visível por Padrão no Mobile */
-#hamburger-menu {
-    display: block;
-    background: none;
-    border: none;
-    color: var(--primary-color);
-    font-size: 2rem;
-    cursor: pointer;
-    line-height: 1;
-}
-
-/* Menu de Navegação Escondido por Padrão no Mobile */
-#nav-menu {
-    display: none;
-    width: 100%;
-    background-color: var(--primary-color);
-}
-
-/* Classe ativada via JS para abrir o menu no mobile */
-#nav-menu.open {
-    display: block;
-    margin-top: 1rem;
-}
-
-#nav-menu ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-}
-
-#nav-menu a {
-    display: block;
-    color: var(--bg-white);
-    text-decoration: none;
-    padding: 0.8rem 1rem;
-    font-weight: 500;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-    transition: background-color var(--transition-speed), color var(--transition-speed);
-}
-
-#nav-menu a:hover,
-#nav-menu a.active {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    font-weight: 700;
-}
-
-/* ==========================================================================
-   Hero com Imagem Fundo Transparente (Sem Gradiente)
-   ========================================================================== */
-.hero {
-    position: relative;
-    min-height: 380px;
-    background-color: var(--primary-color);
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    display: flex;
-    align-items: flex-end; /* Alinha o conteúdo no fundo do hero */
-}
-
-/* Imagem principal completamente nítida */
-.hero-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
-
-/* Conteúdo sobreposto na parte inferior com fundo gradiente para legibilidade */
-.hero-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    padding: 3rem 1.5rem 1.5rem 1.5rem;
-    text-align: center;
-    color: #ffffff;
-    /* Gradiente suave apenas na base do container para legibilidade sem afetar a nitidez da imagem */
-    background: linear-gradient(to top, rgba(5, 43, 81, 0.92) 0%, rgba(5, 43, 81, 0.6) 70%, rgba(5, 43, 81, 0) 100%);
-}
-
-.hero h1 {
-    font-size: 1.6rem;
-    margin-bottom: 0.5rem;
-    font-weight: 800;
-    color: #ffffff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-.hero p {
-    color: #f1ce5e; /* Amarelo dourado para destaque do parágrafo */
-    font-weight: 600;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
-}
-
-/* ==========================================================================
-   Seção de Filtros
-   ========================================================================== */
+/* Seção de Filtros de Categoria */
 .filtros-container {
     display: flex;
     flex-wrap: wrap;
@@ -187,7 +16,7 @@ header {
     background-color: var(--card-bg);
     color: var(--primary-color);
     border: 2px solid var(--accent-color);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.2rem;
     font-weight: 600;
     border-radius: 4px;
     cursor: pointer;
@@ -200,20 +29,21 @@ header {
     color: var(--primary-color);
 }
 
-/* Grid de Cards das Empresas */
+/* Grid para renderização dinâmica dos cards de empresas */
 #grid-cardapio-dinamico {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
 }
 
+/* Card Individual de Empresa no Diretório */
 .card-empresa {
     background-color: var(--card-bg);
-    border: 2px solid var(--accent-color);
+    border: 1px solid var(--border-color);
     border-top: 6px solid var(--accent-color);
-    border-radius: 8px;
-    padding: 1.25rem;
-    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.15);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -221,11 +51,10 @@ header {
 }
 
 .card-empresa img {
-    width: 100px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
-    display: block;
-    margin: 0 auto 10px auto;
+    margin-bottom: 1rem;
     border-radius: 4px;
 }
 
@@ -243,62 +72,27 @@ header {
     font-weight: 700;
     padding: 0.2rem 0.6rem;
     border-radius: 12px;
-    border: 1px solid var(--accent-color);
+    border: 1px solid var(--border-color);
     margin-bottom: 0.75rem;
 }
 
 .card-empresa p {
     font-size: 0.95rem;
-    color: var(--dark-neutral);
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.card-empresa .nivel {
+    font-weight: 700;
+    color: var(--accent-hover);
+    font-size: 0.85rem;
+    text-transform: uppercase;
 }
 
 /* ==========================================================================
-   Rodapé
-   ========================================================================== */
-footer {
-    background-color: var(--primary-color);
-    color: var(--bg-white);
-    padding: 1.5rem 1rem;
-    text-align: center;
-    margin-top: auto;
-    border-top: 4px solid var(--accent-color);
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-/* ==========================================================================
-   Media Query para Telas Maiores (Desktops / Tablets >= 768px)
+   MEDIA QUERY ESPECÍFICA DO DIRETÓRIO (DESKTOP >= 768px)
    ========================================================================== */
 @media screen and (min-width: 768px) {
-    header {
-        flex-wrap: nowrap;
-    }
-
-    #hamburger-menu {
-        display: none !important;
-    }
-
-    #nav-menu {
-        display: block !important;
-        width: auto;
-        margin-top: 0;
-    }
-
-    #nav-menu ul {
-        flex-direction: row;
-        gap: 0.5rem;
-    }
-
-    #nav-menu a {
-        border-top: none;
-        border-radius: 4px;
-    }
-
     #grid-cardapio-dinamico {
         grid-template-columns: repeat(3, 1fr);
     }

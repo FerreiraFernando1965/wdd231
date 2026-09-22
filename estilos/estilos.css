@@ -1,34 +1,40 @@
+/* ==========================================================================
+   1. VARIÁVEIS DE DESIGN SYSTEM (PALETA & CONFIGURAÇÕES GLOBAIS)
+   ========================================================================== */
 :root {
-    --accent-color: #f1ce5e;       /* Amarelo Dourado */
-    --accent-hover: #b59226;       /* Amarelo Dourado Escuro */
-    --accent-light: #fef9e7;       /* Amarelo Dourado Suave */
+    /* Cores Principais - Inspiração na Bandeira de Campinas */
     --primary-color: #052b51;      /* Azul Marinho Profundo */
-    --bg-white: #ffffff;           /* Branco Puro */
+    --accent-color: #f1ce5e;       /* Amarelo Dourado */
+    --accent-hover: #dca90f;       /* Amarelo Dourado Escuro (Interatividade) */
+    --accent-light: #fef9e7;       /* Amarelo Dourado Suave (Fundo de Cards/Destaques) */
+    
+    /* Neutros e Tipografia */
+    --dark-neutral: #102e5b;      /* Azul Marinho Ultra Escuro (Texto) */
+    --light-neutral: #fafaf6;     /* Fundo da Página (Suave) */
+    --card-bg: #ffffff;           /* Fundo dos Cards */
+    --border-color: #d4af37;      /* Borda Dourada */
+    --bg-white: #ffffff;          /* Branco Puro */
 
-    --dark-neutral: #102e5b;       /* Azul Marinho Ultra Escuro */
-    --light-neutral: #fafaf6;      /* Fundo Claro */
-    --card-bg: #ffffff;            /* Fundo dos Cards */
-    --border-color: #d4af37;       /* Borda com Toque Dourado */
-    --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* Tipografia e Transições */
+    --font-main: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --transition-speed: 0.3s ease;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* ==========================================================================
+   2. RESET E ESTILOS BASE
+   ========================================================================== */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
 body {
     font-family: var(--font-main);
     color: var(--dark-neutral);
-    background-color: var(--accent-color);
+    background-color: var(--light-neutral);
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -40,16 +46,30 @@ main {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1.5rem 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Acessibilidade: Respeito a preferências de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
 /* ==========================================================================
-   Cabeçalho e Menu
+   3. CABEÇALHO & NAVEGAÇÃO (COMUM)
    ========================================================================== */
 header {
     background-color: var(--accent-color);
-    color: var(--bg-white);
-    padding: 1rem;
+    color: var(--primary-color);
+    padding: 1rem 1.5rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -61,7 +81,7 @@ header {
 .brand {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .brand img.logo {
@@ -71,11 +91,12 @@ header {
 }
 
 .brand span {
-    font-size: 1rem;
+    font-size: 1.15rem;
     font-weight: 900;
     color: var(--primary-color);
 }
 
+/* Botão do Menu Hambúrguer (Mobile) */
 #hamburger-menu {
     display: block;
     background: none;
@@ -86,10 +107,13 @@ header {
     line-height: 1;
 }
 
+/* Menu de Navegação */
 #nav-menu {
     display: none;
     width: 100%;
     background-color: var(--primary-color);
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 #nav-menu.open {
@@ -107,9 +131,9 @@ header {
     display: block;
     color: var(--bg-white);
     text-decoration: none;
-    padding: 0.8rem 1rem;
+    padding: 0.8rem 1.2rem;
     font-weight: 500;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
     transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
@@ -121,21 +145,20 @@ header {
 }
 
 /* ==========================================================================
-   Hero com Imagem Nítida e Texto Posicionado na Parte Inferior
+   4. SEÇÃO HERO (COMUM)
    ========================================================================== */
 .hero {
     position: relative;
     min-height: 380px;
     background-color: var(--primary-color);
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    box-shadow: var(--box-shadow);
     overflow: hidden;
     display: flex;
-    align-items: flex-end; /* Alinha o conteúdo no fundo do hero */
+    align-items: flex-end;
 }
 
-/* Imagem principal completamente nítida */
 .hero-img {
     position: absolute;
     top: 0;
@@ -146,32 +169,33 @@ header {
     z-index: 1;
 }
 
-/* Conteúdo sobreposto na parte inferior com fundo gradiente para legibilidade */
 .hero-content {
     position: relative;
     z-index: 2;
     width: 100%;
     padding: 3rem 1.5rem 1.5rem 1.5rem;
     text-align: center;
-    color: #ffffff;
-    /* Gradiente suave apenas na base do container para legibilidade sem afetar a nitidez da imagem */
-    background: linear-gradient(to top, rgba(5, 43, 81, 0.92) 0%, rgba(5, 43, 81, 0.6) 70%, rgba(5, 43, 81, 0) 100%);
+    color: var(--bg-white);
+    background: linear-gradient(to top, rgba(5, 43, 81, 0.95) 0%, rgba(5, 43, 81, 0.6) 70%, rgba(5, 43, 81, 0) 100%);
 }
 
-.hero h1 {
-    font-size: 1.6rem;
+.hero h1, 
+.hero h2 {
+    font-size: 1.8rem;
     margin-bottom: 0.5rem;
     font-weight: 800;
-    color: #ffffff;
+    color: var(--bg-white);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .hero p {
-    color: #f1ce5e; /* Amarelo dourado para destaque do parágrafo */
+    color: var(--accent-color);
     font-weight: 600;
+    font-size: 1.05rem;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
 }
 
+/* Botões CTA Comuns */
 .cta-button {
     display: inline-block;
     background-color: var(--accent-color);
@@ -188,92 +212,94 @@ header {
 
 .cta-button:hover {
     background-color: var(--accent-hover);
-    color: #ffffff;
+    color: var(--bg-white);
     border-color: var(--accent-hover);
 }
 
-.dashboard-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
+/* ==========================================================================
+   5. CARDS E ELEMENTOS GENÉRICOS (EX: CAMARA.HTML E FUTURAS PÁGINAS)
+   ========================================================================== */
 .card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1.25rem;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.spotlights h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
 
 .spotlight-container {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 1.5rem;
 }
 
-/* Otimização de renderização da Main Thread usando content-visibility */
 .spotlight-card {
     background-color: var(--card-bg);
-    border: 2px solid var(--accent-color);
-    border-radius: 8px;
-    padding: 1.25rem;
+    border: 1px solid var(--border-color);
     border-top: 6px solid var(--accent-color);
-    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.15);
-    content-visibility: auto;
-    contain-intrinsic-size: 200px;
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+    box-shadow: var(--box-shadow);
 }
 
-.join-cta {
-    background-color: var(--accent-light);
-    border: 4px solid var(--accent-color);
-    border-radius: 8px;
-    padding: 1.5rem;
-    text-align: center;
-    margin-top: 1.5rem;
+.link-detalhes {
+    color: var(--primary-color);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.link-detalhes:hover {
+    text-decoration: underline;
+}
+
+/* Estilos complementares para formulários e tabelas em páginas futuras */
+.form-container {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 /* ==========================================================================
-   Rodapé
+   6. RODAPÉ (COMUM)
    ========================================================================== */
 footer {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    padding: 1.0rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+    padding: 1.5rem 1rem;
     text-align: center;
     margin-top: auto;
-    border-top: 4px solid var(--primary-color);
+    border-top: 4px solid var(--accent-color);
 }
 
 .footer-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.2rem;
+    gap: 0.75rem;
 }
 
 .social-links {
     display: flex;
-    gap: 3rem;
+    gap: 1.5rem;
 }
 
 .social-links img {
-    width: 50px;
-    height: 50px;
-    aspect-ratio: 1 / 1;
-}
-
-/* Redução de animação/transição caso o usuário prefira economizar recursos */
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-    }
+    width: 36px;
+    height: 36px;
 }
 
 /* ==========================================================================
-   Media Queries
+   7. MEDIA QUERIES GLOBAIS (RESPONSIVIDADE DESKTOP)
    ========================================================================== */
 @media screen and (min-width: 768px) {
     header {
@@ -288,6 +314,7 @@ footer {
         display: block !important;
         width: auto;
         margin-top: 0;
+        background-color: transparent;
     }
 
     #nav-menu ul {
@@ -298,23 +325,17 @@ footer {
     #nav-menu a {
         border-top: none;
         border-radius: 4px;
+        color: var(--primary-color);
+    }
+
+    #nav-menu a:hover,
+    #nav-menu a.active {
+        background-color: var(--primary-color);
+        color: var(--bg-white);
     }
 
     .hero {
         min-height: 450px;
-    }
-
-    .hero-content {
-        padding: 4rem 2.5rem 2rem 2.5rem;
-    }
-
-    .hero h1 {
-        font-size: 2.4rem;
-    }
-
-    .dashboard-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
     }
 
     .spotlight-container {

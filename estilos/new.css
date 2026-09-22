@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #e2e8e0; /* Fundo suave parecido com a imagem */
+    background-color: #f1ce5e; 
     color: #222;
     display: flex;
     flex-direction: column;
@@ -47,7 +47,7 @@ body {
 
 .menu-btn {
     background: transparent;
-    border: 1px solid #777;
+    border: 1px solid #f1ce5e;
     border-radius: 4px;
     padding: 5px 12px;
     font-size: 1.2rem;
@@ -107,12 +107,12 @@ body {
 /* Cards */
 .card {
     border: 1px solid #222;
-    background-color: #fff;
+    background-color: #e2cc8a;
 }
 
 .card-header {
     background-color: #1a1a1a;
-    color: #ffffff;
+    color: #edece4;
     text-align: center;
     padding: 10px;
     font-size: 1.05rem;
@@ -120,12 +120,12 @@ body {
 
 .card-body {
     padding: 20px;
-    background-color: #e0e0e0;
+    background-color: #e2cc8a;
     line-height: 1.5;
     font-size: 0.95rem;
 }
 
-/* Container de Foto */
+
 .photo-container {
     display: flex;
     justify-content: center;
@@ -140,7 +140,7 @@ body {
     border-radius: 4px;
 }
 
-/* Cursos e Filtros */
+
 .courses-section {
     display: flex;
     flex-direction: column;
@@ -189,9 +189,9 @@ body {
 }
 
 .btn-course.completed {
-    background-color: #8fbc8f; /* Tom discreto para cursos concluídos */
-    border-color: #2e7d32;
-    color: #1b5e20;
+    background-color: #f1ce5e; /* Tom discreto para cursos concluídos */
+    border-color: #f6f5f1;
+    color: #100e06;
 }
 
 .credits-info {
