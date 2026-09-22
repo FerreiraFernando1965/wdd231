@@ -4,66 +4,84 @@ const empresas = [
         nome: "Assaí Atacadista",
         categoria: "Alimentos",
         descricao: "Supermercado atacadista com ampla variedade de produtos.",
+        nivel:  "Prata",
         imagem: "imagens/assai.webp"
+    },
+    {
+         nome: "Shopping Parque Dom Pedro",
+        categoria: "Compras",
+        descricao: "Supermercado atacadista com ampla variedade de produtos.",
+        nivel:  "Ouro",
+        imagem: "imagens/shoppingdompedrologo.webp"
     },
     {
         nome: "KFC",
         categoria: "Alimentos",
         descricao: "Restaurante de frango frito com diversos acompanhamentos.",
+        nivel: "Prata",
         imagem: "imagens/kfc.webp"
     },
     {
         nome: "Sanasa",
         categoria: "Saneamento básico",
         descricao: "Empresa especializada em soluções de saneamento.",
+        nivel: "Ouro",
         imagem: "imagens/sanasa.webp"
     },
     {
         nome: "Leroy Merlin",
         categoria: "Materiais de construção",
         descricao: "Loja de materiais de construção com ampla variedade de produtos.",
+        nivel: "Prata",
         imagem: "imagens/leroymerlin.webp"
     },
     {
         nome: "Unicamp",
         categoria: "Educação",
         descricao: "Universidade pública com cursos de graduação e pós-graduação.",
+        nivel: "Sem Fins lucrativos",
         imagem: "imagens/unicamp.webp"
     },
     {
         nome: "UNIP",
         categoria: "Educação",
         descricao: "Universidade privada com cursos de graduação e pós-graduação.",
+        nivel: "Prata",
         imagem: "imagens/unip.webp"
     },
     {
         nome: "Burger King",
         categoria: "Alimentos",
         descricao: "Restaurante de hambúrgueres com diversos acompanhamentos.",
+        nivel: "Prata",
         imagem: "imagens/burgerking.webp"
     },
     {
         nome: "DoMendes",
         categoria: "Alimentos",
         descricao: "Pizzaria especializada em pizzas artesanais.",
+        nivel: "Ouro",
         imagem: "imagens/domendes.webp"
     },
     {
         nome: "Coco Bambu",
         categoria: "Alimentos",
         descricao: "Restaurante especializado em pratos tropicais e bebidas exóticas.",
+        nivel: "Prata",
         imagem: "imagens/cocobambu.webp"
     },
     {
         nome: "Sorvetes Sergel",
         categoria: "Alimentos",
         descricao: "Sorveteria especializada em sabores exclusivos.",
+        nivel: "Prata",
         imagem: "imagens/sergel.webp"
     },
     {
         nome: "O Matuto",
         categoria: "Alimentos",
         descricao: "Restaurante especializado em pratos quentes, churrasco e bebidas exóticas.",
+        nivel: "Prata",
         imagem: "imagens/omatuto.webp"
     }
 ];
@@ -78,10 +96,11 @@ function renderizarEmpresas(lista) {
         const card = document.createElement("article");
         card.classList.add("card-empresa");
         card.innerHTML = `
-            <img src="img/${empresa.imagem}" alt="Logo ${empresa.nome}" loading="lazy">
+            <img src="${empresa.imagem}" alt="Logo ${empresa.nome}" loading="lazy">
             <h3>${empresa.nome}</h3>
             <span class="categoria">${empresa.categoria}</span>
             <p>${empresa.descricao}</p>
+            <span class="nivel">${empresa.nivel}</span>
         `;
         grid.appendChild(card);
     });
