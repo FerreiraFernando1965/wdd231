@@ -3,40 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Câmara de Comércio de Campinas">
-    <meta name="author" content="Fernando Luis Ferreira">
-    <title>Câmara de Comércio de Campinas | Página Diretório</title>
-
+    <meta name="description" content="Diretório de empresas associadas da Câmara de Comércio de Campinas.">
+    <title>Câmara de Comércio de Campinas | Diretório de Empresas</title>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-
-    <link rel="stylesheet" href="estilos/estilos.css">
-    <link rel="stylesheet" href="diretorio.css">
-    <link rel="stylesheet" href="estilos/new.css">
-    <script src="diretorio.js" defer></script>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="novacamara.css">
+       <script src="scripts/diretorio.js" defer></script>
 </head>
 <body>
 
     <header>
-       <div class="brand">
+        <div class="brand">
             <img src="imagens/logocccsf.jpg" alt="Logotipo da Câmara de Comércio de Campinas" class="logo" width="50" height="50" fetchpriority="high">
             <span>Câmara de Comércio de Campinas</span>
         </div>
-        <button id="hamburger-menu" aria-label="Abrir Menu">☰</button>
+
+        <button id="hamburger-menu" aria-label="Abrir menu de navegação" aria-expanded="false">
+            &#9776;
+        </button>
+
         <nav id="nav-menu">
             <ul>
-                <li><a href="#" class="active">Início</a></li>
-                <li><a href="camara.html">Página inicial</a></li>
+                <li><a href="index.html">Início</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="associe-se.html">Associe-se</a></li>
+                <li><a href="diretorio.html" class="active">Diretório</a></li>
+                <li><a href="associe.html">Associe-se</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- Seção Hero Atualizada -->
+        <!-- Hero Section -->
         <section class="hero">
             <img src="imagens/250717_fotos_centro_de_campinas_foto_carlos_bassan_004_(36029962481).webp" alt="Visão panorâmica da cidade de Campinas" class="hero-img" fetchpriority="high">
             <div class="hero-content">
@@ -61,7 +63,7 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; <span id="anoatual"></span> 🚀 Fernando Luis Ferreira -Campinas, SP, Brasil 🚀</p>
+            <p>&copy; <span id="anoatual"></span> 🚀 Fernando Luis Ferreira - Campinas, SP, Brasil 🚀</p>
             <p id="ultimaModificacao" class="last-modified"></p>
         </div>
     </footer>

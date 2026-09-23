@@ -1,21 +1,18 @@
 /* ==========================================================================
-   1. VARIÁVEIS DE DESIGN SYSTEM (PALETA & CONFIGURAÇÕES GLOBAIS)
+   1. VARIÁVEIS DE DESIGN SYSTEM
    ========================================================================== */
 :root {
-    /* Cores Principais - Inspiração na Bandeira de Campinas */
-    --primary-color: #052b51;      /* Azul Marinho Profundo */
-    --accent-color: #f1ce5e;       /* Amarelo Dourado */
-    --accent-hover: #dca90f;       /* Amarelo Dourado Escuro (Interatividade) */
-    --accent-light: #fef9e7;       /* Amarelo Dourado Suave (Fundo de Cards/Destaques) */
+    --primary-color: #052b51;
+    --accent-color: #f1ce5e;
+    --accent-hover: #dca90f;
+    --accent-light: #fef9e7;
     
-    /* Neutros e Tipografia */
-    --dark-neutral: #102e5b;      /* Azul Marinho Ultra Escuro (Texto) */
-    --light-neutral: #fafaf6;     /* Fundo da Página (Suave) */
-    --card-bg: #ffffff;           /* Fundo dos Cards */
-    --border-color: #d4af37;      /* Borda Dourada */
-    --bg-white: #ffffff;          /* Branco Puro */
+    --dark-neutral: #102e5b;
+    --light-neutral: #fafaf6;
+    --card-bg: #ffffff;
+    --border-color: #d4af37;
+    --bg-white: #ffffff;
 
-    /* Tipografia e Transições */
     --font-main: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --transition-speed: 0.3s ease;
     --border-radius: 8px;
@@ -55,7 +52,6 @@ img {
     display: block;
 }
 
-/* Acessibilidade: Respeito a preferências de movimento reduzido */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -64,7 +60,7 @@ img {
 }
 
 /* ==========================================================================
-   3. CABEÇALHO & NAVEGAÇÃO (COMUM)
+   3. CABEÇALHO & NAVEGAÇÃO
    ========================================================================== */
 header {
     background-color: var(--accent-color);
@@ -87,7 +83,6 @@ header {
 .brand img.logo {
     height: 50px;
     width: auto;
-    aspect-ratio: 1 / 1;
 }
 
 .brand span {
@@ -96,7 +91,6 @@ header {
     color: var(--primary-color);
 }
 
-/* Botão do Menu Hambúrguer (Mobile) */
 #hamburger-menu {
     display: block;
     background: none;
@@ -107,7 +101,6 @@ header {
     line-height: 1;
 }
 
-/* Menu de Navegação */
 #nav-menu {
     display: none;
     width: 100%;
@@ -145,7 +138,7 @@ header {
 }
 
 /* ==========================================================================
-   4. SEÇÃO HERO (COMUM)
+   4. SEÇÃO HERO
    ========================================================================== */
 .hero {
     position: relative;
@@ -179,12 +172,10 @@ header {
     background: linear-gradient(to top, rgba(5, 43, 81, 0.95) 0%, rgba(5, 43, 81, 0.6) 70%, rgba(5, 43, 81, 0) 100%);
 }
 
-.hero h1, 
-.hero h2 {
+.hero h1 {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
     font-weight: 800;
-    color: var(--bg-white);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
@@ -195,18 +186,15 @@ header {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
 }
 
-/* Botões CTA Comuns */
 .cta-button {
-   
-    display: block;
-    width: fit-content;
-    margin: 1rem auto 0 auto; /* O 'auto' nas laterais centraliza o botão */
+    display: inline-block;
     background-color: var(--accent-color);
     color: var(--primary-color);
     padding: 0.85rem 1.75rem;
     font-weight: 800;
     text-decoration: none;
     border-radius: 4px;
+    margin-top: 1rem;
     border: 2px solid var(--accent-color);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: background-color var(--transition-speed), color var(--transition-speed);
@@ -220,7 +208,7 @@ header {
 
 
 /* ==========================================================================
-   5. CARDS E ELEMENTOS GENÉRICOS (EX: CAMARA.HTML E FUTURAS PÁGINAS)
+   5. CARDS E COMPONENTES
    ========================================================================== */
 .card {
     background-color: var(--card-bg);
@@ -237,9 +225,10 @@ header {
     font-size: 1.5rem;
 }
 
+/* Layout responsivo com CSS Grid moderno (sem necessidade de Mídia Query extra) */
 .spotlight-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
 }
 
@@ -262,18 +251,95 @@ header {
     text-decoration: underline;
 }
 
-/* Estilos complementares para formulários e tabelas em páginas futuras */
-.form-container {
+/* ==========================================================================
+   6. DIRETÓRIO DE EMPRESAS (FILTROS E CARDS DINÂMICOS)
+   ========================================================================== */
+.filtros-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.btn-filtro {
+    background-color: var(--card-bg);
+    color: var(--primary-color);
+    border: 2px solid var(--accent-color);
+    padding: 0.5rem 1.2rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.btn-filtro:hover,
+.btn-filtro.active {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* Grid auto-ajustável para cards de empresas */
+#grid-cardapio-dinamico {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.card-empresa {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
+    border-top: 6px solid var(--accent-color);
     border-radius: var(--border-radius);
-    padding: 2rem;
-    max-width: 700px;
-    margin: 0 auto;
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card-empresa img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.card-empresa h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+    font-size: 1.25rem;
+}
+
+.card-empresa .categoria {
+    display: inline-block;
+    background-color: var(--accent-light);
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 0.75rem;
+}
+
+.card-empresa p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.card-empresa .nivel {
+    font-weight: 700;
+    color: var(--accent-hover);
+    font-size: 0.85rem;
+    text-transform: uppercase;
 }
 
 /* ==========================================================================
-   6. RODAPÉ (COMUM)
+   7. RODAPÉ
    ========================================================================== */
 footer {
     background-color: var(--primary-color);
@@ -302,7 +368,7 @@ footer {
 }
 
 /* ==========================================================================
-   7. MEDIA QUERIES GLOBAIS (RESPONSIVIDADE DESKTOP)
+   8. MEDIA QUERIES GLOBAIS (Navegação Desktop)
    ========================================================================== */
 @media screen and (min-width: 768px) {
     header {
@@ -339,10 +405,5 @@ footer {
 
     .hero {
         min-height: 450px;
-    }
-
-    .spotlight-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
     }
 }

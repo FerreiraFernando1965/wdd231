@@ -7,14 +7,15 @@
     <meta name="author" content="Fernando Luis Ferreira">
     <title>Câmara de Comércio de Campinas | Página Inicial</title>
     
-    <!-- Google Fonts API -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-    
-    <link rel="stylesheet" href="estilos/estilos.css">
-    <link rel="stylesheet" href="estilos/new.css">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="novacamara.css">
+   
+    <!-- Scripts -->
     <script src="scripts/scripts.js" defer></script>
 </head>
 <body>
@@ -25,15 +26,13 @@
             <span>Câmara de Comércio de Campinas</span>
         </div>
 
-        <!-- Ícone de hambúrguer para acessibilidade e navegação mobile -->
         <button id="hamburger-menu" aria-label="Abrir menu de navegação" aria-expanded="false">
             &#9776;
         </button>
 
-        <!-- Navegação Principal do Site -->
         <nav id="nav-menu">
             <ul>
-                <li><a href="index.html" class="active">Index</a></li>
+                <li><a href="index.html" class="active">Início</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="diretorio.html">Diretório</a></li>
                 <li><a href="associe.html">Associe-se</a></li>
@@ -42,23 +41,23 @@
     </header>
 
     <main>
-        <!-- Seção 1: Hero -->
+        <!-- Hero Section com H1 principal da página -->
         <section class="hero">
             <img src="imagens/250717_fotos_centro_de_campinas_foto_carlos_bassan_004_(36029962481).webp" alt="Visão panorâmica da cidade de Campinas" class="hero-img" fetchpriority="high">
             <div class="hero-content">
-                <h2>Conectando Negócios, Fortalecendo Campinas</h2>
+                <h1>Conectando Negócios, Fortalecendo Campinas</h1>
                 <p>Junte-se à nossa rede de empresários e impulsione o desenvolvimento regional.</p>
                 <a href="associe.html" class="cta-button">Associe-se Agora</a>
             </div>
         </section>
 
-        <!-- Seção 2: Informações da Comunidade -->
+        <!-- Informações da Comunidade -->
         <section class="card community-info">
             <h2>Informações da Comunidade</h2>
             <p>Campinas é um dos maiores polos de inovação, tecnologia e negócios da América Latina. Nossa missão é fomentar parcerias estratégicas e criar oportunidades para empresas de todos os portes.</p>
         </section>
 
-        <!-- Seção 3: Previsão do Tempo -->
+        <!-- Previsão do Tempo -->
         <section class="card weather-card">
             <h2>Previsão do Tempo</h2>
             <div id="weather-info">
@@ -66,36 +65,35 @@
             </div>
         </section>
 
-        <!-- Seção 4: Destaques  -->
+        <!-- Destaques -->
         <section class="spotlights">
-            
-            <h2>Empresas em Destaque Nível Ouro Sem Fins Lucrativos</h2>
+            <h2>Empresas em Destaque</h2>
             <div class="spotlight-container">
                 <article class="spotlight-card">
                     <h3>Sanasa S/A</h3>
-                    <p>Nível Ouro -Excelência na prestação de serviços de abastecimento de água, coleta e tratamento de esgoto.</p>
+                    <p><strong>Nível Ouro</strong> - Excelência na prestação de serviços de abastecimento de água, coleta e tratamento de esgoto.</p>
                     <a href="diretorio.html" class="link-detalhes">Saiba mais</a>
                 </article>
 
                 <article class="spotlight-card">
-                    <h3>UNiCAMP - Universidade Estadual de Campinas</h3>
-                    <p>Nível Sem Fins Lucrativos -Uma cidade universitária de saber e pesquisa de ponta.</p>
+                    <h3>UNICAMP - Universidade Estadual de Campinas</h3>
+                    <p><strong>Sem Fins Lucrativos</strong> - Uma cidade universitária de saber e pesquisa de ponta.</p>
                     <a href="diretorio.html" class="link-detalhes">Saiba mais</a>
                 </article>
 
                 <article class="spotlight-card">
                     <h3>Parque D. Pedro Shopping</h3>
-                    <p>Nível Ouro -O maior shopping center da América Latina em extensão territorial contínua.</p>
+                    <p><strong>Nível Ouro</strong> - O maior shopping center da América Latina em extensão territorial contínua.</p>
                     <a href="diretorio.html" class="link-detalhes">Saiba mais</a>
                 </article>
             </div>
         </section>
 
-        <!-- Seção 5: Chamada de Ação Secundária -->
+        <!-- Chamada para Ação Secundária -->
         <section class="join-cta">
             <h2>Sua empresa merece todo destaque!</h2>
             <p>Conheça nossos planos de associação (Sem Fins Lucrativos, Prata e Ouro) e aproveite os benefícios exclusivos.</p>
-            <a href="associe.html" class="cta-button secundary">Ver Níveis de Associação</a>
+            <a href="associe.html" class="cta-button secondary">Ver Níveis de Associação</a>
         </section>
     </main>
 
@@ -103,14 +101,14 @@
         <div class="footer-content">
             <div class="social-links">
                 <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">
-                    <img src="imagens/github.webp" alt="GitHub" width="50" height="50" loading="lazy">
+                    <img src="imagens/github.webp" alt="GitHub" width="36" height="36" loading="lazy">
                 </a>
                 <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <img src="imagens/linkedin.webp" alt="LinkedIn" width="50" height="50" loading="lazy">
+                    <img src="imagens/linkedin.webp" alt="LinkedIn" width="36" height="36" loading="lazy">
                 </a>
             </div>
 
-            <p>&copy; <span id="anoatual"></span> 🚀 Fernando Luis Ferreira -Campinas, SP, Brasil 🚀</p>
+            <p>&copy; <span id="anoatual"></span> 🚀 Fernando Luis Ferreira - Campinas, SP, Brasil 🚀</p>
             <p id="ultimaModificacao" class="last-modified"></p>
         </div>
     </footer>
