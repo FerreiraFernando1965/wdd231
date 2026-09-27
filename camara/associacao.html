@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulário de Associação da Câmara de Comércio de Campinas">
+    <meta name="author" content="Fernando Luis Ferreira">
+    <title>Câmara de Comércio de Campinas | Associação</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="estilo/estilos.css">
+    <link rel="stylesheet" href="estilo/associacao.css">
+    <script src="scripts/scripts.js" defer></script>
+    <script src="script/associacao.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <img src="imagens/logocccsf.jpg" alt="Logotipo da Câmara de Comércio de Campinas" class="logo" width="50" height="50" fetchpriority="high">
+            <span>Câmara de Comércio de Campinas</span>
+        </div>
+        <button id="hamburger-menu" aria-label="Abrir Menu">☰</button>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="camara.html">Página inicial</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="associacao.html" class="active">Associe-se</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="assoc-layout">
+        <!-- Seção do Formulário -->
+        <section class="form-container">
+            <h1>Formulário de Associação</h1>
+            <p>Preencha os dados abaixo para se associar à Câmara de Comércio de Campinas.</p>
+
+            <form action="agradecimentos.html" method="get" class="assoc-form">
+                <!-- Data e Hora Atual (Campo Oculto) -->
+                <input type="hidden" name="timestamp" id="timestamp">
+
+                <!-- Nome -->
+                <label title="Digite o primeiro nome do candidato">
+                    <span>Nome *</span>
+                    <input type="text" name="nome" id="nome" autocomplete="given-name" required placeholder="Digite seu primeiro nome">
+                </label>
+
+                <!-- Sobrenome -->
+                <label title="Digite o sobrenome do candidato">
+                    <span>Sobrenome *</span>
+                    <input type="text" name="sobrenome" id="sobrenome" autocomplete="family-name" required placeholder="Digite seu sobrenome">
+                </label>
+
+                <!-- Cargo na Organização -->
+                <label title="Apenas caracteres alfabéticos, hifens e espaços com pelo menos 7 caracteres">
+                    <span>Cargo na Organização</span>
+                    <input type="text" name="cargo-na-organizacao" id="cargo-na-organizacao" autocomplete="organization-title" pattern="[A-Za-zÀ-ÿ\s\-]{7,}" placeholder="Ex: Diretor Executivo">
+                </label>
+
+                <!-- E-mail -->
+                <label title="Digite um endereço de e-mail válido">
+                    <span>E-mail *</span>
+                    <input type="email" name="email" id="email" autocomplete="email" required placeholder="exemplo@dominio.com">
+                </label>
+
+                <!-- Celular -->
+                <label title="Digite o número do telefone celular">
+                    <span>Celular *</span>
+                    <input type="tel" name="celular" id="celular" autocomplete="tel" required placeholder="(19) 99999-9999">
+                </label>
+
+                <!-- Organização -->
+                <label title="Digite o nome da empresa ou organização">
+                    <span>Nome da Empresa/Organização *</span>
+                    <input type="text" name="organizacao" id="organizacao" autocomplete="organization" required placeholder="Nome da sua empresa">
+                </label>
+
+                <!-- Nível de Associação -->
+                <label title="Selecione o nível de associação desejado">
+                    <span>Nível de Associação *</span>
+                    <select name="nivel-associacao" id="nivel-associacao" required>
+                        <option value="" disabled selected>Selecione um nível...</option>
+                        <option value="np">Associação NP (Sem fins lucrativos - Gratuito)</option>
+                        <option value="bronze">Associação Bronze</option>
+                        <option value="silver">Associação Prata</option>
+                        <option value="gold">Associação Ouro</option>
+                    </select>
+                </label>
+
+                <!-- Descrição da Organização -->
+                <label title="Descreva as atividades da sua organização">
+                    <span>Descrição da Atividade/Organização</span>
+                    <textarea name="descricao" id="descricao" rows="4" placeholder="Descreva brevemente a sua organização e área de atuação..."></textarea>
+                </label>
+
+                <!-- Botão Enviar -->
+                <button type="submit" class="cta-button">Enviar Inscrição</button>
+            </form>
+        </section>
+
+        <!-- Cartões dos Níveis de Associação -->
+        <aside class="cards-container">
+            <h2>Níveis de Associação</h2>
+
+            <div class="card-plano card-animado">
+                <h3>Associação NP</h3>
+                <p>Ideal para organizações sem fins lucrativos que buscam suporte comunitário.</p>
+                <button type="button" class="btn-info" data-modal="modal-np">Saiba Mais</button>
+            </div>
+
+            <div class="card-plano card-animado">
+                <h3>Associação Bronze</h3>
+                <p>Para a empresa que está começando e precisa de uma força.</p>
+                <button type="button" class="btn-info" data-modal="modal-bronze">Saiba Mais</button>
+            </div>
+
+            <div class="card-plano card-animado">
+                <h3>Associação Prata</h3>
+                <p>Para a empresa que deseja crescer!</p>
+                <button type="button" class="btn-info" data-modal="modal-silver">Saiba Mais</button>
+            </div>
+
+            <div class="card-plano card-animado">
+                <h3>Associação Ouro</h3>
+                <p>Para a empresa que está no topo e quer continuar.</p>
+                <button type="button" class="btn-info" data-modal="modal-gold">Saiba Mais</button>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Modais de Benefícios (HTML Dialogs) -->
+    <dialog id="modal-np" class="modal-dialog">
+        <h2>Benefícios - Associação NP</h2>
+        <p>Gratuito para ONGs e entidades sem fins lucrativos.</p>
+        <ul>
+            <li>Inclusão no diretório público de parceiros sociais.</li>
+            <li>Acesso a encontros semestrais comunitários.</li>
+            <li>Divulgação em matérias institucionais.</li>
+        </ul>
+        <button type="button" class="btn-close">Fechar</button>
+    </dialog>
+
+    <dialog id="modal-bronze" class="modal-dialog">
+        <h2>Benefícios - Associação Bronze</h2>
+        <p>Investimento para quem está começando.</p>
+        <ul>
+            <li>Participação em grupos de treinamento.</li>
+            <li>Apoio na construção de estratégias de marketing.</li>
+            <li>Recebimento do boletim informativo mensal.</li>
+        </ul>
+        <button type="button" class="btn-close">Fechar</button>
+    </dialog>
+
+    <dialog id="modal-silver" class="modal-dialog">
+        <h2>Benefícios - Associação Prata</h2>
+        <p>Para a empresa que sabe aonde quer chegar.</p>
+        <ul>
+            <li>Desconto de 20% em todos os workshops e treinamentos.</li>
+            <li>Participação em grupos de mentoria.</li>
+            <li>Inclusão de logotipo no rodapé de newsletters mensais.</li>
+            <li>PArticipação gratuita em eventos da área.</li>
+        </ul>
+        <button type="button" class="btn-close">Fechar</button>
+    </dialog>
+
+    <dialog id="modal-gold" class="modal-dialog">
+        <h2>Benefícios - Associação Ouro</h2>
+        <p>Apoio total</p>
+        <ul>
+            <li>Posição de destaque fixa na página inicial da Câmara.</li>
+            <li>Entradas gratuitas ilimitadas para todos os workshops da rede.</li>
+            <li>Direito a patrocinar 1 evento anual de grande porte.</li>
+            <li>Consultoria empresarial com mentores parceiros.</li>
+            <li>Suporte VIP e canal direto de atendimento.</li>
+        </ul>
+        <button type="button" class="btn-close">Fechar</button>
+    </dialog>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="anoatual"></span> 🚀 Fernando Luis Ferreira - Campinas, SP, Brasil 🚀</p>
+            <p id="ultimaModificacao" class="last-modified"></p>
+        </div>
+    </footer>
+</body>
+</html>
