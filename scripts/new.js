@@ -1,15 +1,15 @@
-// Array de Cursos
-const cursos = [
-    {
-        assunto: 'CSE',
-        numero: 110,
-        titulo: 'Introduction to Programming',
+/*// Array de Cursos
+  const cursos = [
+  //  {
+     //   assunto: 'CSE',
+     //  numero: 110,
+    //   titulo: 'Introduction to Programming',
         creditos: 2,
         certificado: 'Web and Computer Programming',
         descricao: 'This course will introduce students to programming.',
         tecnologia: ['Python'],
-        concluido: true
-    },
+        concluido: true 
+   // },
     {
         assunto: 'WDD',
         numero: 130,
@@ -126,4 +126,76 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (anoElemento) anoElemento.textContent = new Date().getFullYear();
     if (modifElemento) modifElemento.textContent = `Última Modificação: ${document.lastModified}`;
+}); */
+
+const cursos = [
+    { assunto: 'CSE', numero: 110, creditos: 2, concluido: true },
+    { assunto: 'WDD', numero: 130, creditos: 2, concluido: true },
+    { assunto: 'CSE', numero: 111, creditos: 2, concluido: true },
+    { assunto: 'CSE', numero: 210, creditos: 2, concluido: false },
+    { assunto: 'WDD', numero: 131, creditos: 2, concluido: true },
+    { assunto: 'WDD', numero: 231, creditos: 2, concluido: false }
+];
+
+document.addEventListener("DOMContentLoaded", () => {
+    const courseContainer = document.querySelector(".course-list");
+    const creditsContainer = document.querySelector(".credits-info strong");
+    const filterButtons = document.querySelectorAll(".btn-filter");
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+
+    // Toggle do Menu Hambúrguer
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", () => navMenu.classList.toggle("open"));
+    }
+
+    // Renderização dos Cursos e Cálculo dos Créditos
+    function displayCourses(filteredCourses) {
+        if (courseContainer) {
+            courseContainer.innerHTML = filteredCourses.map(curso => `
+                <div class="btn btn-course ${curso.concluido ? 'completed' : ''}">
+                    ${curso.assunto} ${curso.numero}
+                </div>
+            `).join('');
+        }
+
+        if (creditsContainer) {
+            creditsContainer.textContent = filteredCourses.reduce((sum, c) => sum + c.creditos, 0);
+        }
+    }
+
+    // Filtros Dinâmicos
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            const category = button.textContent.trim();
+            const filtered = (category === "All" || category === "Todos") 
+                ? cursos 
+                : cursos.filter(c => c.assunto === category);
+
+            displayCourses(filtered);
+        });
+    });
+
+    // Exibição Inicial
+    displayCourses(cursos);
+
+    // Rodapé
+    const anoElemento = document.getElementById("anoatual");
+    const modifElemento = document.getElementById("ultimaModificacao");
+
+    if (anoElemento) anoElemento.textContent = new Date().getFullYear();
+     if (modifElemento) {
+        // Converte a data de modificação para o formato DD/MM/AAAA
+        const dataModificacao = new Date(document.lastModified);
+        const dataFormatada = dataModificacao.toLocaleDateString('pt-BR');
+        
+        modifElemento.textContent = `Última Modificação: ${dataFormatada}`;
+    }
 });
+
+
+   
+   

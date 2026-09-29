@@ -15,7 +15,7 @@ body {
 
 /* Header */
 .header {
-    background-color: #ffffff;
+    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -41,7 +41,6 @@ body {
 .site-title {
     font-size: 1.4rem;
     color: #333;
-    font-weight: normal;
 }
 
 .menu-btn {
@@ -69,7 +68,7 @@ body {
 
 .nav-menu li a {
     display: block;
-    color: #ffffff;
+    color: #fff;
     padding: 12px 20px;
     text-decoration: none;
     font-size: 0.95rem;
@@ -85,15 +84,13 @@ body {
     max-width: 1000px;
     width: 100%;
     margin: 20px auto;
-    padding: 0 15px;
-    background-color: #ffffff;
-    padding-bottom: 20px;
+    padding: 0 15px 20px;
+    background-color: #fff;
 }
 
 .page-title {
     font-size: 1.8rem;
     margin: 15px 0;
-    color: #222;
 }
 
 /* Grid Layout Principal */
@@ -119,11 +116,9 @@ body {
 
 .card-body {
     padding: 20px;
-    background-color: #e2cc8a;
     line-height: 1.5;
     font-size: 0.95rem;
 }
-
 
 .photo-container {
     display: flex;
@@ -138,7 +133,6 @@ body {
     object-fit: cover;
     border-radius: 4px;
 }
-
 
 .courses-section {
     display: flex;
@@ -183,12 +177,11 @@ body {
 
 .btn-course {
     width: 100%;
-    background-color: #dcdcdc;
-    border: 1px solid #999;
+    border-color: #999;
 }
 
 .btn-course.completed {
-    background-color: #f1ce5e; /* Tom discreto para cursos concluídos */
+    background-color: #f1ce5e;
     border-color: #f6f5f1;
     color: #100e06;
 }
@@ -221,7 +214,6 @@ body {
 /* Rodapé */
 .footer {
     background-color: #a8a8a8;
-    color: #222;
     text-align: center;
     padding: 15px;
     font-size: 0.85rem;
@@ -230,54 +222,4 @@ body {
 
 .last-modified {
     margin-top: 5px;
-}
-
-/* ===================================================
-   RESPONSIVIDADE - DESKTOP (Telas maiores que 768px)
-=================================================== */
-@media (min-width: 768px) {
-    .menu-btn {
-        display: none;
-    }
-
-    .nav-menu {
-        display: block;
-    }
-
-    .nav-menu ul {
-        display: flex;
-        justify-content: flex-start;
-        max-width: 1000px;
-        margin: 0 auto;
-        padding-left: 15px;
-    }
-
-    .nav-menu li a {
-        padding: 12px 25px;
-    }
-
-    /* Grid layout exatamente igual ao wireframe */
-    .main-grid {
-        display: grid;
-        grid-template-columns: 1.4fr 1fr;
-        grid-template-rows: auto auto;
-        gap: 20px;
-    }
-
-    .card-about {
-        grid-column: 1 / 2;
-    }
-
-    .card-photo {
-        grid-column: 2 / 3;
-    }
-
-    .card-courses {
-        grid-column: 1 / 3; /* Ocupa as duas colunas abaixo */
-    }
-
-    /* 3 Colunas na lista de cursos */
-    .course-list {
-        grid-template-columns: repeat(3, 1fr);
-    }
 }
