@@ -46,7 +46,7 @@ body {
 
 /* Menu de Navegação */
 .nav-menu {
-    background-color: #1a1a1a;
+    background-color: #0d0c0c;
     display: none;
 }
 
@@ -68,7 +68,7 @@ body {
 
 .nav-menu li a:hover,
 .nav-menu li a.active {
-    background-color: #4a4a4a;
+    background-color: #949191;
 }
 
 /* Container Principal */
@@ -169,7 +169,7 @@ body {
 
 .btn-course {
     width: 100%;
-    border-color: #999;
+    border-color: #444040;
 }
 
 .btn-course.completed {
@@ -194,7 +194,7 @@ body {
 
 .social-icons a {
     color: #1a1a1a;
-    font-size: 2rem;
+    font-size: 4rem;
     text-decoration: none;
     transition: color 0.2s;
 }
@@ -205,7 +205,7 @@ body {
 
 /* Rodapé */
 .footer {
-    background-color: #a8a8a8;
+    background-color: #c0bdbd;
     text-align: center;
     padding: 15px;
     font-size: 0.85rem;
