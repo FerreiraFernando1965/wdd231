@@ -1,0 +1,109 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+     font-family: 'Roboto', sans-serif;
+     font-size: 1rem;
+    color: rgb(3, 3, 49);
+    background-color: #267bdc;
+    line-height: 3;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}   
+   
+header {
+   
+    background-color: rgb(184, 208, 168);
+    color:  rgb(3, 3, 49);;
+    margin-top: auto;
+    border-top: 4px solid #eeac3a;
+    border-bottom: 4px solid#eeac3a
+}
+
+.rodape {
+    background-color: rgb(184, 208, 168);;
+    color: rgb(3, 3, 49);;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    margin-top: auto;
+    border-top: 4px solid #eeac3a;
+    border-bottom: 4px solid#eeac3a
+    
+}
+
+.section {
+    color: rgb(3, 3, 49);
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+    text-align: center;
+    background-color: rgb(184, 208, 168);;
+    border-radius: 8px;
+    border-top: 4px solid #eeac3a;
+    border-bottom: 4px solid#eeac3a
+
+}
+.mobile
+{
+    color:  rgb(3, 3, 49);;
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+    text-align: center;
+    background-color: rgb(184, 208, 168);;
+    border-radius: 8px;
+    border-top: 4px solid #eeac3a;
+    border-bottom: 4px solid#eeac3a
+  
+}
+
+.desktop {
+    color:  rgb(3, 3, 49);
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+    text-align: center;
+    background-color: rgb(184, 208, 168);;
+    border-radius: 8px;
+    border-top: 4px solid #eeac3a;
+    border-bottom: 4px solid#eeac3a
+}
+    
+
+
+.cores  {
+     color:  rgb(3, 3, 49);
+    padding: 2rem 1rem;
+    
+    margin: 2rem 0;
+    background-color: rgb(184, 208, 168);;
+    border-radius: 8px;
+    border-top: 4px solid #eeac3a;
+    border-bottom: 4px solid#eeac3a
+}
+
+
+.forms {
+    color: rgb(3, 3, 49);
+    padding: 2rem 1rem;
+    text-align: inline;
+    margin: 2rem 0;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-top: 4px solid rgb(184, 208, 168);
+    border-bottom: 4px solid rgb(184, 208, 168)
+}
+.footer {
+    background-color: rgb(194, 194, 234);
+    color: rgb(3, 3, 49);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    margin-top: auto;
+    border-top: 4px solid #eeac3a;
+}

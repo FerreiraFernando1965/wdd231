@@ -3,7 +3,7 @@
    ========================================================================== */
 :root {
     /* Cores Principais - Inspiração na Bandeira de Campinas */
-    --primary-color: #052b51;      /* Azul Marinho Profundo */
+    --primary-color: #356fa9;      /* Azul Marinho Profundo */
     --accent-color: #f1ce5e;       /* Amarelo Dourado */
     --accent-hover: #dca90f;       /* Amarelo Dourado Escuro (Interatividade) */
     --accent-light: #fef9e7;       /* Amarelo Dourado Suave (Fundo de Cards/Destaques) */
@@ -329,12 +329,13 @@ footer {
         border-top: none;
         border-radius: 4px;
         color: var(--primary-color);
+        padding: 0.5rem 1rem;
     }
 
     #nav-menu a:hover,
     #nav-menu a.active {
         background-color: var(--primary-color);
-        color: var(--bg-white);
+        color: ffff;
     }
 
     .hero {
