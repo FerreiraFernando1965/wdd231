@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+#lugares div{
+    margin: 1rem 8px;
+    border: 1px solid #999;
+    background-color: #eee;
+    border-radius: 8px;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-areas: 
+    "nome"
+    "foto"
+    "descricao"
+    "endereco";
+}
+
+#lugares div h2{
+        margin: 1rem 10px;
+        grid-area: nome;
+    }
+
+    lugares div img{
+        width: 100%;
+        grid-area: foto;
+
+    }
+
+    #lugares div p{
+        margin: 1rem 10px;
+        grid-area: descricao;
+    }
+
+#lugares div endereco{
+    margin: 1rem 10px;
+    grid-area: endereco;
+}    
+
+
