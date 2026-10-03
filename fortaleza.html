@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colunas Automáticas e Efeitos de Imagem</title>
+    <!-- Importação de fontes usadas no CSS (opcional, mas recomendado) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="estilos/fortaleza.css">
+</head>
+<body>
+<main>
+<h1>Colunas Automáticas e Efeitos de Imagem</h1>
+<section>
+	<h2 class="stdlf">Templo de Fortaleza Brasil</h2>
+	<div class="container stdlf">
+		<figure>
+			<img class="hover" src="https://www.churchofjesuschrist.org/imgs/e2a28dbb2b14f5f71d79b359cf9f7b88dc480144/full/800%2C/0/default?lang=por" loading="lazy" width="250" height="167" alt="Templo de Fortaleza Brasil">
+			<figcaption>:hover pseudo-class | box-shadow</figcaption>
+		</figure>
+		<figure><img class="rocorn" src="https://www.churchofjesuschrist.org/imgs/e2a28dbb2b14f5f71d79b359cf9f7b88dc480144/full/800%2C/0/default?lang=por" loading="lazy" width="250" height="167" alt="Templo de Fortaleza Brasil">
+			<figcaption>border-radius (15px 150px)</figcaption>
+		</figure>
+		<figure><img class="opac" src="https://www.churchofjesuschrist.org/imgs/e2a28dbb2b14f5f71d79b359cf9f7b88dc480144/full/800%2C/0/default?lang=por" alt="Templo de Fortaleza Brasil">
+			<figcaption>opacity (.5)</figcaption>
+		</figure>
+		<figure><img class="blur" src="https://www.churchofjesuschrist.org/imgs/e2a28dbb2b14f5f71d79b359cf9f7b88dc480144/full/800%2C/0/default?lang=por" loading="lazy" width="250" height="167" alt="Templo de Fortaleza Brasil">
+			<figcaption>filter: blur at 4px</figcaption>
+		</figure>
+		<figure><img class="gray" src="https://www.churchofjesuschrist.org/imgs/e2a28dbb2b14f5f71d79b359cf9f7b88dc480144/full/800%2C/0/default?lang=por" loading="lazy" width="250" height="167" alt="Templo de Fortaleza Brasil">
+			<figcaption>filter: blur (1px) and grayscale (50%)</figcaption>
+		</figure>
+		<figure><img class="object" src="https://www.churchofjesuschrist.org/imgs/e2a28dbb2b14f5f71d79b359cf9f7b88dc480144/full/800%2C/0/default?lang=por" loading="lazy" width="250" height="167" alt="Templo de Fortaleza Brasil">
+			<figcaption>object-fit</figcaption>
+		</figure>
+		<figure><img class="contrast" src="https://www.churchofjesuschrist.org/imgs/e2a28dbb2b14f5f71d79b359cf9f7b88dc480144/full/800%2C/0/default?lang=por" loading="lazy" width="250" height="167" alt="Templo de Fortaleza Brasil">
+			<figcaption>filter: contrast (50%)</figcaption>
+		</figure>
+		<figure><img class="saturate" src="https://www.churchofjesuschrist.org/imgs/e2a28dbb2b14f5f71d79b359cf9f7b88dc480144/full/800%2C/0/default?lang=por" loading="lazy" width="250" height="167" alt="Templo de Fortaleza Brasil">
+			<figcaption>filter: saturate(50%)</figcaption>
+		</figure>
+		<figure><img class="shape-outside" src="https://www.churchofjesuschrist.org/imgs/e2a28dbb2b14f5f71d79b359cf9f7b88dc480144/full/800%2C/0/default?lang=por" loading="lazy" width="250" height="167" alt="Templo de Fortaleza Brasil">
+			<figcaption>Shape-Outside (shape-outside: circle();) é aplicado com um border-radius e uma largura reduzida. A propriedade shape-outside pode não ser suportada pelo seu navegador. Consulte <a href="https://caniuse.com/#search=shape-outside" target="_blank">CanIUse</a> para verificar se essa propriedade css é suportada.
+			</figcaption>
+		</figure>
+		<figure><img class="mbm-difference" src="https://www.churchofjesuschrist.org/imgs/e2a28dbb2b14f5f71d79b359cf9f7b88dc480144/full/800%2C/0/default?lang=por" loading="lazy" width="250" height="167" alt="Templo de Fortaleza Brasil">
+			<figcaption>mix-blend-mode: difference</figcaption>
+		</figure>
+
+		<figure><img class="mbm-hard-light" src="https://www.churchofjesuschrist.org/imgs/e2a28dbb2b14f5f71d79b359cf9f7b88dc480144/full/800%2C/0/default?lang=por" loading="lazy" width="250" height="167" alt="Templo de Fortaleza Brasil">
+			<figcaption>mix-blend-mode: hard-light</figcaption>
+		</figure>
+
+		<figure>
+			<img class="transform" src="https://www.churchofjesuschrist.org/imgs/e2a28dbb2b14f5f71d79b359cf9f7b88dc480144/full/800%2C/0/default?lang=por" loading="lazy" width="250" height="167" alt="Templo de Fortaleza Brasil">
+			<figcaption>Virar horizontalmente</figcaption>
+		</figure>
+
+		<figure>
+			<img class="turn" src="https://www.churchofjesuschrist.org/imgs/e2a28dbb2b14f5f71d79b359cf9f7b88dc480144/full/800%2C/0/default?lang=por" loading="lazy" width="250" height="167" alt="Templo de Fortaleza Brasil">
+			<figcaption>rotate: .05turn</figcaption>
+		</figure>
+	</div>
+</section>
+</main>
+</body>
+</html>
+
+
