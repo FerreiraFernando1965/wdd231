@@ -12,7 +12,7 @@ function exibirItens(locais) {
     titulo.innerText = x.nome
     painel.appendChild(titulo)
     const endereco = document.createElement("endereco")
-    enderco.innerText = x.endereco
+    endereco.innerText = x.endereco
     painel.appendChild(endereco)
     const descricao = document.createElement("p")
     descricao.innerText = x.descricao
