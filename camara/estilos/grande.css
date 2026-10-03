@@ -1,6 +1,8 @@
-@media only screen and ( min-width: 64rem ){
-    dispaly: grid;
+@media only screen and ( min-width: 64rem )
+{
+#lugares{
+    display: grid;
     grid-template-columns: 1fr 1fr;
 }
-
+}
 
