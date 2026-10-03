@@ -58,8 +58,8 @@ img {
 /* Acessibilidade: Respeito a preferências de movimento reduzido */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms ;
+        transition-duration: 0.01ms ;
     }
 }
 
@@ -139,8 +139,8 @@ header {
 
 #nav-menu a:hover,
 #nav-menu a.active {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--accent-color);
     font-weight: 700;
 }
 
@@ -202,7 +202,7 @@ header {
     width: fit-content;
     margin: 1rem auto 0 auto; /* O 'auto' nas laterais centraliza o botão */
     background-color: var(--accent-color);
-    color: var(--primary-color);
+    color: var(--dark-neutral);
     padding: 0.85rem 1.75rem;
     font-weight: 800;
     text-decoration: none;
@@ -310,11 +310,11 @@ footer {
     }
 
     #hamburger-menu {
-        display: none !important;
+        display: none ;
     }
 
     #nav-menu {
-        display: block !important;
+        display: block ;
         width: auto;
         margin-top: 0;
         background-color: transparent;
@@ -335,7 +335,7 @@ footer {
     #nav-menu a:hover,
     #nav-menu a.active {
         background-color: var(--primary-color);
-        color: ffff;
+        color: var(--bg-white);
     }
 
     .hero {
