@@ -5,7 +5,7 @@ function exibirItens(locais) {
     locais.forEach(x => {
         const painel = document.createElement("div")
    const foto = document.createElement("img")
-    foto.src = ../imagens/${x.foto}
+    foto.src = x.foto
     foto.alt = x.nome
     painel.appendChild(foto)
     const titulo = document.createElement("h2")
