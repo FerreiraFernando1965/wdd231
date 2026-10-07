@@ -9,7 +9,7 @@
     <meta property="og:title" content="Câmara de Comércio de Campinas | Conectando empresas">
     <meta property="og:description" content="Conectando empresas e impulsionando o desenvolvimento regional de Campinas.">
     <meta property="og:url" content="https://ferreirafernando1965.github.io/wdd231/camara/associacao.html">
-    <title>Câmara de Comércio de Campinas | Associação</title>
+    <title>Associe-se àCâmara de Comércio de Campinas</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,44 +45,44 @@
             <h1>Formulário de Associação</h1>
             <p>Preencha os dados abaixo para se associar à Câmara de Comércio de Campinas.</p>
 
-            <form action="agradecimentos.html" method="get" class="assoc-form">
+            <form action="agradecimento.html" method="get" class="assoc-form">
                 <!-- Data e Hora Atual (Campo Oculto) -->
                 <input type="hidden" name="timestamp" id="timestamp">
 
                 <!-- Nome -->
                 <label title="Digite o primeiro nome do candidato">
                     <span>Nome *</span>
-                    <input type="text" name="nome" id="nome" autocomplete="given-name" required placeholder="Digite seu primeiro nome">
+                    <input type="text" name="nome" id="nome" autocomplete="given-name" required placeholder="Digite seu primeiro nome" title="Digite o primeiro nome do candidato">
                 </label>
 
                 <!-- Sobrenome -->
                 <label title="Digite o sobrenome do candidato">
                     <span>Sobrenome *</span>
-                    <input type="text" name="sobrenome" id="sobrenome" autocomplete="family-name" required placeholder="Digite seu sobrenome">
+                    <input type="text" name="sobrenome" id="sobrenome" autocomplete="family-name" required placeholder="Digite seu sobrenome" title="Digite o sobrenome do candidato">
                 </label>
 
                 <!-- Cargo na Organização -->
                 <label title="Apenas caracteres alfabéticos, hifens e espaços com pelo menos 7 caracteres">
                     <span>Cargo na Organização</span>
-                    <input type="text" name="cargo-na-organizacao" id="cargo-na-organizacao" autocomplete="organization-title" pattern="[A-Za-zÀ-ÿ\s\-]{7,}" placeholder="Ex: Diretor Executivo">
+                    <input type="text" name="cargo-na-organizacao" id="cargo-na-organizacao" autocomplete="organization-title" pattern="[A-Za-zÀ-ÿ\s\-]{7,}" placeholder="Ex: Diretor Executivo" title= "Digite o cargo na organização">
                 </label>
 
                 <!-- E-mail -->
-                <label title="Digite um endereço de e-mail válido">
+                <label title="Digite um endereço de e-mail válido" title="Digite um endereço de e-mail válido">
                     <span>E-mail *</span>
-                    <input type="email" name="email" id="email" autocomplete="email" required placeholder="exemplo@dominio.com">
+                    <input type="email" name="email" id="email" autocomplete="email" required placeholder="exemplo@dominio.com" title="Digite um endereço de e-mail válido">
                 </label>
 
                 <!-- Celular -->
                 <label title="Digite o número do telefone celular">
                     <span>Celular *</span>
-                    <input type="tel" name="celular" id="celular" autocomplete="tel" required placeholder="(19) 99999-9999">
+                    <input type="tel" name="celular" id="celular" autocomplete="tel" required placeholder="(19) 99999-9999" title="Digite o número do telefone celular">
                 </label>
 
                 <!-- Organização -->
                 <label title="Digite o nome da empresa ou organização">
                     <span>Nome da Empresa/Organização *</span>
-                    <input type="text" name="organizacao" id="organizacao" autocomplete="organization" required placeholder="Nome da sua empresa">
+                    <input type="text" name="organizacao" id="organizacao" autocomplete="organization" required placeholder="Nome da sua empresa" title=""Digite o nome da empresa ou organização">
                 </label>
 
                 <!-- Nível de Associação -->
@@ -100,7 +100,7 @@
                 <!-- Descrição da Organização -->
                 <label title="Descreva as atividades da sua organização">
                     <span>Descrição da Atividade/Organização</span>
-                    <textarea name="descricao" id="descricao" rows="4" placeholder="Descreva brevemente a sua organização e área de atuação..."></textarea>
+                    <textarea name="descricao" id="descricao" rows="4" placeholder="Descreva brevemente a sua organização e área de atuação..." title="Descreva as atividades de sua organização"></textarea>
                 </label>
 
                 <!-- Botão Enviar -->
