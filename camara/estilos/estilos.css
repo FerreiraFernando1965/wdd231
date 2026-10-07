@@ -91,7 +91,7 @@ header {
 .brand span {
     font-size: 1.15rem;
     font-weight: 900;
-    color: var(--primary-color);
+    color: var(--dark-neutral);
 }
 
 /* Botão do Menu Hambúrguer (Mobile) */
@@ -187,7 +187,7 @@ header {
 }
 
 .hero p {
-    color: var(--primary-color);
+    color: var(--accent-color);
     font-weight: 600;
     font-size: 1.05rem;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
@@ -326,7 +326,7 @@ footer {
     #nav-menu a {
         border-top: none;
         border-radius: 4px;
-        color: var(--primary-color);
+        color: var(--dark-neutral);
         padding: 0.5rem 1rem;
     }
 
