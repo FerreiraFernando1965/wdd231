@@ -66,7 +66,7 @@ img {
    ========================================================================== */
 header {
     background-color: var(--accent-color);
-    color: var(--primary-color);
+    color: var(--dark-neutral);
     padding: 1rem 1.5rem;
     display: flex;
     flex-wrap: wrap;
@@ -109,7 +109,7 @@ header {
 #nav-menu {
     display: none;
     width: 100%;
-    background-color: var(--primary-color);
+    background-color: var(--bg-white);
     border-radius: 4px;
     overflow: hidden;
 }
@@ -127,7 +127,7 @@ header {
 
 #nav-menu a {
     display: block;
-    color: var(--bg-white);
+    color: var(--dark-neutral);
     text-decoration: none;
     padding: 0.8rem 1.2rem;
     font-weight: 500;
@@ -137,7 +137,7 @@ header {
 
 #nav-menu a:hover,
 #nav-menu a.active {
-    background-color: var(--primary-color);
+    background-color: var(--bg-white);
     color: var(--accent-color);
     font-weight: 700;
 }
@@ -187,7 +187,7 @@ header {
 }
 
 .hero p {
-    color: var(--accent-color);
+    color: var(--primary-color);
     font-weight: 600;
     font-size: 1.05rem;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
