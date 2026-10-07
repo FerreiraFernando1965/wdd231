@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. VARIÁVEIS DE DESIGN SYSTEM (PALETA & CONFIGURAÇÕES GLOBAIS)
-   ========================================================================== */
+
 :root {
     /* Cores Principais - Inspiração na Bandeira de Campinas */
     --primary-color: #356fa9;      /* Azul Marinho Profundo */
@@ -215,7 +213,7 @@ header {
 .cta-button:hover {
     background-color: var(--accent-hover);
     color: var(--bg-white);
-    border-color: var(--accent-hover);
+    border-color: var(--primary-color);
 }
 
 
