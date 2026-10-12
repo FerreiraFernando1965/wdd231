@@ -1,45 +1,57 @@
-*{
+*, *::before, *::after {
     box-sizing: border-box;
+
+#lugares {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
-#lugares div{
-    margin: 1rem 8px;
-    border: 1px solid #999;
-    background-color: #eee;
-    border-radius: 8px;
-    overflow: hidden;
+
+#lugares div {
+    background-color: var(--card-bg); /* Cor de fundo diferente do fundo da página */
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+    box-shadow: var(--box-shadow);
 
     display: grid;
     grid-template-areas: 
-    "nome"
-    "foto"
-    "descricao"
-    "endereco";
+        "nome"
+        "foto"
+        "descricao"
+        "endereco";
+    gap: 0.75rem; /* Espaçamento limpo entre os elementos */
 }
 
-#lugares div h2{
-        margin: 1rem 10px;
-        grid-area: nome;
-    }
+/* 1. O nome fica acima e fora da imagem */
+#lugares div h2 {
+    grid-area: nome;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin: 0;
+}
 
-    lugares div img{
-        width: 100%;
-        grid-area: foto;
+/* 2. A imagem fica logo abaixo do nome, com tamanho padronizado */
+#lugares div img {
+    grid-area: foto;
+    width: 100%;
+    height: 220px;          /* Altura fixa para todas ficarem iguais */
+    object-fit: cover;      /* Preenche o quadrado sem distorcer a foto */
+    border-radius: 4px;
+}
 
-    }
+/* 3. Descrição logo abaixo */
+#lugares div p {
+    grid-area: descricao;
+    margin: 0;
+    color: var(--dark-neutral);
+}
 
-    #lugares div p{
-        margin: 1rem 10px;
-        grid-area: descricao;
-    }
-
-#lugares div endereco{
-    margin: 1rem 10px;
+/* 4. Endereço no rodapé do card */
+#lugares div .endereco {
     grid-area: endereco;
-}    
-
-#lugares img {
-  width: 100%;           
-  height: 200px;         
-  object-fit: cover;     
-  object-position: center; 
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #555;
+    margin: 0;
 }

@@ -1,12 +1,12 @@
-@media only screen and ( min-width: 38rem ){
+@media only screen and (min-width: 38rem) {
+    #lugares {
+        display: grid;
+        grid-template-columns: 1fr; /* Ou o layout que preferir para tablets */
+        gap: 1.5rem;
+    }
 
-#lugares div{
-    grid-template-areas:
-    "foto nome"
-    "foto descricao"
-    "foto endereco";
-} 
-
-#lugares div img{
-    width: 300px;
+    #lugares div {
+        /* Mantém o posicionamento relativo para o h2 absoluto */
+        position: relative;
+    }
 }
