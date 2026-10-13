@@ -1,0 +1,62 @@
+[
+  {
+    "nome": "Ecoponto Barão Geraldo",
+    "endereco": "Av. Santa Isabel, s/nº - Barão Geraldo, Campinas - SP",
+    "tipo": "Ponto de entrega voluntária de recicláveis, volumosos e entulho",
+    "foto":  "imagens/recicla01.webp"
+  },
+  {
+    "nome": "Ecoponto Região Central",
+    "endereco": "Rua Francisco Theodoro, 1050 - Vila Industrial, Campinas - SP",
+    "tipo": "Ponto de entrega voluntária de recicláveis, volumosos e entulho",
+    "foto":  "imagens/recicla02.webp"
+  },
+  {
+    "nome": "Ecoponto Jardim Pacaembu",
+    "endereco": "Rua Dante Suriane esq. com Av. Padre Gaspar Bertoni - Jardim Pacaembu, Campinas - SP",
+    "tipo": "Ponto de entrega voluntária de recicláveis, volumosos e entulho",
+    "foto":  "imagens/recicla03.webp"
+  },
+  {
+    "nome": "Ecoponto Jardim Eulina",
+    "endereco": "Avenida Marechal Rondon esq. Rua José Manuel Veiga - Jardim Eulina, Campinas - SP",
+    "tipo": "Ponto de entrega voluntária de recicláveis, volumosos e entulho",
+    "foto":  "imagens/recicla04.webp"
+  },
+  {
+    "nome": "Ecoponto Jardim Paranapanema",
+    "endereco": "Rua Serra D'água esq. Rua Felismina Stemmer Cajado - Jardim Paranapanema, Campinas - SP",
+    "tipo": "Ponto de entrega voluntária de recicláveis, volumosos e entulho",
+    "foto": "imagens/recicla05.webp"
+  },
+  {
+    "nome": "Ecoponto Parque Itália / DLU",
+    "endereco": "Av. Prefeito Faria Lima, 630 - Parque Itália, Campinas - SP",
+    "tipo": "Descarte especializado de pneus e materiais recicláveis",
+    "foto":  "imagens/recicla06.webp"
+  },
+  {
+    "nome": "Ecoponto Parque Itajaí",
+    "endereco": "Rua Celso Soares Couto, s/n - Parque Itajaí, Campinas - SP",
+    "tipo": "Ponto de entrega voluntária de recicláveis, volumosos e entulho",
+    "foto":  "imagens/recicla07.webp"
+  },
+  {
+    "nome": "Ecoponto Parque São Jorge",
+    "endereco": "Rua Plácida Pretini, s/n - Parque São Jorge, Campinas - SP",
+    "tipo": "Ponto de entrega voluntária de recicláveis, volumosos e entulho",
+    "foto":  "imagens/recicla08.webp"
+  },
+  {
+    "nome": "Ecoponto Jardim São Gabriel",
+    "endereco": "Rua José Martins Lourenço esq. Rua Geraldo Bretas - Jardim São Gabriel, Campinas - SP",
+    "tipo": "Ponto de entrega voluntária de recicláveis, volumosos e entulho",
+    "foto": "imagens/recicla09.webp"
+  },
+  {
+    "nome": "Ecoponto Parque Via Norte",
+    "endereco": "Rua dos Cambarás, 200 - Parque Via Norte, Campinas - SP",
+    "tipo": "Ponto de entrega voluntária de recicláveis, volumosos e entulho",
+    "foto":  "imagens/recicla10.webp"
+  }
+]

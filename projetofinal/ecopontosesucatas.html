@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lista completa de ecopontos municipais e ferros-velhos em Campinas - SP.">
+    <meta name="author" content="Fernando Luis Ferreira">
+    <title>Ecopontos e Sucatas - Reciclar é Vida</title>
+
+    <link rel="icon" href="imagens/reciclar.webp" type="image/webp">
+    <link rel="stylesheet" href="estilos/projetofinal.css">
+    <script src="scripts/projetofinal.js" type="module" defer></script>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <img src="imagens/reciclar.webp" alt="Logotipo" class="logo" width="50" height="50">
+            <span>RECICLAR É VIDA</span>
+        </div>
+        <button id="hamburger-menu" aria-label="Abrir menu" aria-expanded="false">&#9776;</button>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="sobre.html">Nossa História</a></li>
+                <li><a href="ecopontosesucatas.html" class="active">Ecopontos e Sucatas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+      <!-- Botões em formato de figura -->
+    <div class="toggle-buttons" style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+        
+        <!-- Botão de Ecopontos com Imagem -->
+        <button id="btn-ecopontos" class="btn-figura active">
+            <img src="imagens/recicla13.webp" alt="Ecopontos" loading="lazy">
+            <span>Ecopontos de Campinas</span>
+        </button>
+
+        <!-- Botão de Sucatas com Imagem -->
+        <button id="btn-sucatas" class="btn-figura">
+            <img src="imagens/sucata01.webp" alt="Ferros-Velhos e Sucatas" loading="lazy">
+            <span>Ferros-Velhos e Sucatas</span>
+        </button>
+
+    </div>
+
+    <!-- Secção de Ecopontos (Visível por defeito) -->
+    <section id="secao-ecopontos" class="section secao-conteudo">
+        <h2>Ecopontos de Campinas</h2>
+        <p>Locais oficiais geridos para o descarte voluntário de materiais recicláveis, volumosos e pequenos volumes de entulho.</p>
+        <div id="ecopontos-container" class="cards-grid"></div>
+    </section>
+
+    <!-- Secção de Sucatas (Oculta por defeito) -->
+    <section id="secao-sucatas" class="section secao-conteudo" style="display: none;">
+        <h2>Ferros-Velhos e Sucatas Parceiras</h2>
+        <p>Estabelecimentos especializados na compra, triagem e reciclagem de sucatas metálicas, aparas e materiais diversos.</p>
+        <div id="sucatas-container" class="cards-grid"></div>
+    </section>
+        
+
+        
+    </main>
+
+    <footer>
+       <p>&copy; 2026 Reciclar é Vida - Campinas / SP</p>
+    <p class="last-modified">Última modificação: <span id="lastModified"></span></p>
+    <p class="visitor-counter">Você visitou esta página <span id="contador-visitas">0</span> vezes.</p>
+    </footer>
+</body>
+</html>

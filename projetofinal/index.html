@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página inicial do projeto Reciclar é Vida em Campinas - SP, desenvolvido por Fernando Luis Ferreira.">
+    <meta name="author" content="Fernando Luis Ferreira">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Projeto Final - Reciclar é Vida">
+    <meta property="og:description" content="Guia de reciclagem, ecopontos e ferros-velhos de Campinas.">
+    <meta property="og:image" content="https://ferreirafernando1965.github.io/wdd231/projetofinal/imagens/reciclar.webp">
+    <meta property="og:url" content="https://ferreirafernando1965.github.io/wdd231/projetofinal/index.html">
+    <title>Página Inicial - Reciclar é Vida</title>
+
+    <link rel="icon" href="imagens/reciclar.webp" type="image/webp">
+    <link rel="apple-touch-icon" href="imagens/reciclar.webp">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="estilos/projetofinal.css">
+    <script src="scripts/projetofinal.js" type="module" defer></script>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <img src="imagens/reciclar.webp" alt="Logotipo Reciclar é Vida" class="logo" width="50" height="50" fetchpriority="high">
+            <span>RECICLAR É VIDA</span>
+        </div>
+        <button id="hamburger-menu" aria-label="Abrir menu de navegação" aria-expanded="false">&#9776;</button>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html" class="active">Página Inicial</a></li>
+                <li><a href="sobre.html">Nossa História</a></li>
+                <li><a href="ecopontosesucatas.html">Ecopontos e Sucatas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section">
+            <h1>Transformando Campinas através da Reciclagem</h1>
+            <p>Bem-vindo ao portal oficial de conscientização e localização de pontos de descarte correto em Campinas. 
+            <p>Aqui você encontra ecopontos municipais e ferros-velhos parceiros para ajudar no descarte adequado e reaproveitamento do material.</p>
+            <p>Agindo dessa maneira você melhora a sociedade, ativa a economia e protege o Meio Ambiente!</p>
+           
+        </section>
+
+        <!-- Formulário de Contato / Inscrição exigido -->
+       <section class="forms-section">
+    <h2>Cadastre seu Ponto ou Contato</h2>
+    
+    <div class="contato-wrapper">
+        <!-- Imagem da Esquerda (Ecoponto) -->
+        <div class="contato-imagem">
+            <img src="imagens/recicla11.webp" alt="Ecoponto de reciclagem" loading="lazy">
+        </div>
+
+        <!-- Formulário Central -->
+        <div class="forms-container">
+            <form action="sucesso.html" method="GET">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+
+                <label for="email">E-mail de Contato:</label>
+                <input type="email" id="email" name="email" required placeholder="seu@email.com">
+
+                <label for="mensagem">Mensagem / Sugestão:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Escreva sua mensagem..."></textarea>
+
+                <button type="submit">Enviar Dados</button>
+            </form>
+        </div>
+
+        <!-- Imagem da Direita (Ferro-Velho) -->
+        <div class="contato-imagem">
+            <img src="imagens/sucata07.webp" alt="Ferro-velho parceiro" loading="lazy">
+        </div>
+    </div>
+</section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Reciclar é Vida - Campinas / SP</p>
+    <p class="last-modified">Última modificação: <span id="lastModified"></span></p>
+    <p class="visitor-counter">Você visitou esta página <span id="contador-visitas">0</span> vezes.</p>
+    </footer>
+</body>
+</html>

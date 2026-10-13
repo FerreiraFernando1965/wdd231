@@ -1,0 +1,367 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: rgb(3, 3, 49);
+    background-color: #9ec5ec;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Header & Navegação Responsiva */
+header {
+    background-color: rgb(184, 208, 168);
+    color: rgb(3, 3, 49);
+    border-top: 4px solid #eeac3a;
+    border-bottom: 4px solid #eeac3a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.logo {
+    border-radius: 50%;
+}
+
+#hamburger-menu {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: rgb(3, 3, 49);
+    display: block;
+}
+
+#nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgb(184, 208, 168);
+    border-bottom: 4px solid #eeac3a;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+#nav-menu.open {
+    display: block;
+}
+
+#nav-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+#nav-menu li a {
+    display: block;
+    padding: 1rem 2rem;
+    color: rgb(3, 3, 49);
+    text-decoration: none;
+    font-weight: 500;
+    border-top: 1px solid rgba(3,3,49,0.1);
+}
+
+#nav-menu li a:hover,
+#nav-menu li a.active {
+    background-color: rgba(238, 172, 58, 0.3);
+    color: #000;
+}
+
+@media (min-width: 768px) {
+    #hamburger-menu {
+        display: none;
+    }
+    #nav-menu {
+        display: block;
+        position: static;
+        width: auto;
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+    #nav-menu ul {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+    #nav-menu li a {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 4px;
+    }
+}
+
+/* Botões em Figura (Ecopontos e Sucatas) */
+.btn-figura {
+    background-color: rgb(184, 208, 168);
+    border: 3px solid #eeac3a;
+    border-radius: 8px;
+    padding: 0.75rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 120px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn-figura img {
+    width: 100%;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.btn-figura:hover,
+.btn-figura.active {
+    border-color: #eeac3a;
+    background-color: rgba(238, 172, 58, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Conteúdo Principal */
+main {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.section {
+    color: #212326;
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+    background-color: rgb(184, 208, 168);
+    border-radius: 8px;
+    border-top: 4px solid #eeac3a;
+    border-bottom: 4px solid #eeac3a;
+}
+
+/* Geração Dinâmica de Cards (Ecopontos e Sucatas) */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .cards-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.card {
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 3px solid #eeac3a;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: rgb(3, 3, 49);
+}
+
+.card-text {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+    color: #333;
+}
+
+.btn-detalhes {
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: rgb(3, 3, 49);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.btn-detalhes:hover {
+    background-color: #eeac3a;
+    color: rgb(3, 3, 49);
+}
+
+/* Seção e Alinhamento do Formulário com Imagens Laterais */
+.forms-section {
+    background-color: rgb(184, 208, 168);
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    border-top: 4px solid #eeac3a;
+    border-bottom: 4px solid #eeac3a;
+    max-width: 1100px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.forms-section h2 {
+    color: rgb(3, 3, 49);
+    margin-bottom: 1rem;
+}
+
+.contato-wrapper {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.contato-imagem {
+    flex: 1;
+    min-width: 220px;
+    max-width: 280px;
+    display: flex;
+}
+
+.contato-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border: 3px solid #eeac3a;
+}
+
+.forms-container {
+    background-color: #9ec5ec;
+    flex: 2;
+    min-width: 280px;
+    max-width: 500px;
+    margin: 0;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forms-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    width: 100%;
+}
+
+.forms-container input,
+.forms-container textarea,
+.forms-container select {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.forms-container button[type="submit"] {
+    background-color: #eeac3a;
+    color: rgb(3, 3, 49);
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.forms-container button[type="submit"]:hover {
+    background-color: rgb(184, 208, 168);
+}
+
+/* Diálogo Modal */
+dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.close-modal {
+    background-color: rgb(3, 3, 49);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+/* Rodapé */
+footer {
+    background-color: rgb(184, 208, 168);
+    color: rgb(3, 3, 49);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border-top: 4px solid #eeac3a;
+    margin-top: auto;
+}
+
+.last-modified {
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    opacity: 0.8;
+}
