@@ -15,7 +15,8 @@
      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="icon" href="imagens/reciclar.webp" type="image/webp">
     <link rel="stylesheet" href="estilos/projetofinal.css">
-    <script src="scripts/projetofinal.js" type="module" defer></script>
+    <link rel="stylesheet" href="estilos/ecocata.css">
+    <script src="scripts/projetofinal.js" type="module"></script>
 </head>
 <body>
     <header>
@@ -35,21 +36,18 @@
 
     <main>
       <!-- Botões em formato de figura -->
-    <div class="toggle-buttons">
-        
-        <!-- Botão de Ecopontos com Imagem -->
-        <button id="btn-ecopontos" class="btn-figura active">
-            <img src="imagens/recicla13.webp" alt="Ecopontos" loading="lazy">
-            <span>Ecopontos de Campinas</span>
-        </button>
-
-        <!-- Botão de Sucatas com Imagem -->
-        <button id="btn-sucatas" class="btn-figura">
-            <img src="imagens/sucata01.webp" alt="Ferros-Velhos e Sucatas" loading="lazy">
-            <span>Ferros-Velhos e Sucatas</span>
-        </button>
-
+   <div class="botoes-container">
+    <button id="btn-ecopontos" class="btn-ecopontos">
+        <img src="imagens/recicla13.webp" alt="Ecoponto">
+    </button>
+    <button id="btn-sucatas" class="btn-sucatas">
+        <img src="imagens/sucata09.webp" alt="Sucata">
+    </button>
     </div>
+    <!-- Outros botões... -->
+
+
+
 
     <!-- Secção de Ecopontos (Visível por defeito) -->
     <section id="secao-ecopontos" class="section secao-conteudo">

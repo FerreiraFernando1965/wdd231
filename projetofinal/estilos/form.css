@@ -1,0 +1,89 @@
+/* Seção e Alinhamento do Formulário com Imagens Laterais */
+.forms-section {
+    background-color: rgb(184, 208, 168);
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    border-top: 4px solid #eeac3a;
+    border-bottom: 4px solid #eeac3a;
+    max-width: 1100px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.forms-section h2 {
+    color: rgb(3, 3, 49);
+    margin-bottom: 1rem;
+}
+
+.contato-wrapper {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.contato-imagem {
+    flex: 1;
+    min-width: 220px;
+    max-width: 280px;
+    display: flex;
+}
+
+.contato-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border: 3px solid #eeac3a;
+}
+
+.forms-container {
+    background-color: #9ec5ec;
+    flex: 2;
+    min-width: 280px;
+    max-width: 500px;
+    margin: 0;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forms-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    width: 100%;
+}
+
+.forms-container input,
+.forms-container textarea,
+.forms-container select {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.forms-container button[type="submit"] {
+    background-color: #eeac3a;
+    color: rgb(3, 3, 49);
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.forms-container button[type="submit"]:hover {
+    background-color: rgb(184, 208, 168);
+}

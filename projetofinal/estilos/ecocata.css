@@ -1,0 +1,45 @@
+/* Organização do container dos botões (lado a lado e centralizados) */
+.botoes-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* Estilização para ambas as classes de botões usadas no HTML */
+.btn-ecopontos,
+.btn-sucatas {
+    background-color: rgb(184, 208, 168);
+    border: 3px solid #eeac3a;
+    border-radius: 8px;
+    padding: 0.75rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 120px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn-ecopontos img,
+.btn-sucatas img {
+    width: 100%;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+    pointer-events: none; /* Garante que o clique vá para o botão */
+}
+
+.btn-ecopontos:hover,
+.btn-ecopontos.active,
+.btn-sucatas:hover,
+.btn-sucatas.active {
+    border-color: #eeac3a;
+    background-color: rgba(238, 172, 58, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
