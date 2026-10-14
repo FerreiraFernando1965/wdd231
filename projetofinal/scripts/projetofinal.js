@@ -1,4 +1,3 @@
-
 const btnEcopontos = document.getElementById("btn-ecopontos");
 const btnSucatas = document.getElementById("btn-sucatas");
 const secaoEcopontos = document.getElementById("secao-ecopontos");
@@ -33,7 +32,6 @@ if (contadorElemento) {
     contadorElemento.textContent = visitas;
 }
 
-
 const hamburgerBtn = document.getElementById("hamburger-menu");
 const navMenu = document.getElementById("nav-menu");
 
@@ -54,7 +52,6 @@ if (elModificacao) {
     elModificacao.textContent = `Última atualização: ${dataModificacao.toLocaleDateString("pt-BR")}`;
 }
 
-
 const modal = document.createElement("dialog");
 modal.id = "info-modal";
 modal.innerHTML = `
@@ -66,8 +63,7 @@ document.body.appendChild(modal);
 const closeModalBtn = modal.querySelector(".close-modal");
 closeModalBtn.addEventListener("click", () => modal.close());
 
-async function carregarDadosUnidades(urlJson, containerId) 
-{
+async function carregarDadosUnidades(urlJson, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
@@ -84,14 +80,16 @@ async function carregarDadosUnidades(urlJson, containerId)
             const card = document.createElement("div");
             card.classList.add("card");
             
-                        card.innerHTML = `
+            // Correção aplicada: fechamento correto do template literal com a crase (`)
+            card.innerHTML = `
                 <img src="${item.foto}" alt="Foto de ${item.nome}" loading="lazy" width="300" height="180">
                 <div class="card-body">
                     <h3 class="card-title">${item.nome}</h3>
                     <p class="card-text"><strong>Endereço:</strong> ${item.endereco}</p>
                     <p class="card-text"><strong>Tipo:</strong> ${item.tipo}</p>
                 </div>
-                <button class="btn-detalhes">Ver Detalhes</button>;
+                <button class="btn-detalhes">Ver Detalhes</button>
+            `;
 
             const btnDetalhes = card.querySelector(".btn-detalhes");
             btnDetalhes.addEventListener("click", () => {
@@ -113,5 +111,6 @@ async function carregarDadosUnidades(urlJson, containerId)
         container.innerHTML = `<p>Não foi possível carregar as informações no momento.</p>`;
     }
 }
+
 carregarDadosUnidades("ecopontos.json", "ecopontos-container");
 carregarDadosUnidades("sucatas.json", "sucatas-container");
