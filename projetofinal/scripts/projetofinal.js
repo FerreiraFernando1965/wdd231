@@ -1,4 +1,4 @@
-// Alternar entre Ecopontos e Sucatas de forma exclusiva
+
 const btnEcopontos = document.getElementById("btn-ecopontos");
 const btnSucatas = document.getElementById("btn-sucatas");
 const secaoEcopontos = document.getElementById("secao-ecopontos");
@@ -20,7 +20,6 @@ if (btnEcopontos && btnSucatas && secaoEcopontos && secaoSucatas) {
     });
 }
 
-// Gerenciamento unificado do contador de visitas via localStorage
 let visitas = localStorage.getItem("visitasProjeto");
 if (!visitas) {
     visitas = 1;
@@ -34,7 +33,7 @@ if (contadorElemento) {
     contadorElemento.textContent = visitas;
 }
 
-// Menu Hambúrguer Responsivo
+
 const hamburgerBtn = document.getElementById("hamburger-menu");
 const navMenu = document.getElementById("nav-menu");
 
@@ -55,7 +54,7 @@ if (elModificacao) {
     elModificacao.textContent = `Última atualização: ${dataModificacao.toLocaleDateString("pt-BR")}`;
 }
 
-// Diálogo Modal Dinâmico
+
 const modal = document.createElement("dialog");
 modal.id = "info-modal";
 modal.innerHTML = `
@@ -67,8 +66,8 @@ document.body.appendChild(modal);
 const closeModalBtn = modal.querySelector(".close-modal");
 closeModalBtn.addEventListener("click", () => modal.close());
 
-// Função genérica para carregar dados via Fetch API e renderizar em grid
-async function carregarDadosUnidades(urlJson, containerId) {
+async function carregarDadosUnidades(urlJson, containerId) 
+{
     const container = document.getElementById(containerId);
     if (!container) return;
 
@@ -85,18 +84,15 @@ async function carregarDadosUnidades(urlJson, containerId) {
             const card = document.createElement("div");
             card.classList.add("card");
             
-            // Usando Template Literals
-            card.innerHTML = `
+                        card.innerHTML = `
                 <img src="${item.foto}" alt="Foto de ${item.nome}" loading="lazy" width="300" height="180">
                 <div class="card-body">
                     <h3 class="card-title">${item.nome}</h3>
                     <p class="card-text"><strong>Endereço:</strong> ${item.endereco}</p>
                     <p class="card-text"><strong>Tipo:</strong> ${item.tipo}</p>
                 </div>
-                <button class="btn-detalhes">Ver Detalhes</button>
-            `;
+                <button class="btn-detalhes">Ver Detalhes</button>;
 
-            // Manipulação de Eventos para o Modal
             const btnDetalhes = card.querySelector(".btn-detalhes");
             btnDetalhes.addEventListener("click", () => {
                 const modalContent = document.getElementById("modal-content");
@@ -117,7 +113,5 @@ async function carregarDadosUnidades(urlJson, containerId) {
         container.innerHTML = `<p>Não foi possível carregar as informações no momento.</p>`;
     }
 }
-
-// Inicialização automática para carregar os ficheiros JSON
 carregarDadosUnidades("ecopontos.json", "ecopontos-container");
 carregarDadosUnidades("sucatas.json", "sucatas-container");

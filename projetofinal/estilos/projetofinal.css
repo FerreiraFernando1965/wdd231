@@ -115,7 +115,6 @@ header {
     }
 }
 
-/* Conteúdo Principal */
 main {
     flex: 1;
     max-width: 1200px;
@@ -134,7 +133,6 @@ main {
     border-bottom: 4px solid #eeac3a;
 }
 
-/* Geração Dinâmica de Cards (Geral) */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -205,7 +203,6 @@ main {
     color: rgb(3, 3, 49);
 }
 
-/* Diálogo Modal */
 dialog {
     border: none;
     border-radius: 8px;
@@ -229,7 +226,6 @@ dialog::backdrop {
     margin-top: 1rem;
 }
 
-/* Rodapé */
 footer {
     background-color: rgb(184, 208, 168);
     color: rgb(3, 3, 49);
@@ -238,7 +234,6 @@ footer {
     border-top: 4px solid #eeac3a;
     margin-top: auto;
 }
-
 .last-modified {
     font-size: 0.85rem;
     margin-top: 0.25rem;
